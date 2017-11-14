@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Registro de usuário - Pet+{% endblock %}
+
+{% block content %}
+    <section class="section-content">
+        <div class="container-login">
+            <h3>Cadastre-se</h3>
+
+            <hr>
+            <form method="post" action="{% url 'login_register' %}">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                </div>
+                <br>
+                <input type="submit" class="btn btn-primary" value="Cadastrar">
+            </form>
+        </div>
+    </section>
+{% endblock %}
