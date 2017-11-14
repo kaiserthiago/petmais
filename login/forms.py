@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 class RegistroForm(forms.Form):
     username = forms.RegexField(regex=r'^\w+$', widget=forms.TextInput(
-        attrs={'class': 'form-control', 'required': 'True', 'max_lenght': '30'}), label='Usuário', error_messages={
+        attrs={'class': 'form-control', 'required': 'True', 'max_lenght': '30', 'autofocus':'autofocus'}), label='Usuário', error_messages={
         'invalid': 'Usuário pode conter apenas letras e números'
     })
 
