@@ -51,7 +51,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'pet.urls'
+ROOT_URLCONF = 'petmais.urls'
 
 TEMPLATES = [
     {
