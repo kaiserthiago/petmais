@@ -25,7 +25,7 @@ SECRET_KEY = 'd1lv3)6!ue*r3y!t--w$8%8(j&&pd5f=g6s=@ru=_o*^9h8nq6'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['petmais.pythonanywhere.com', '127.0.0.1']
 
 
 # Application definition
