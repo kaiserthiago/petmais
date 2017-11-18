@@ -1,12 +1,52 @@
 {% extends 'base.html' %}
 {% block title %}Home - Pet+{% endblock %}
 {% block class_home %} class="active" {% endblock %}
+{% load static %}
 
 {% block content %}
     <section class="section-content">
         <div class="container">
-            <h2 class="page-header">Pet+</h2>
-            <p>Uma nova experiência em adoção de <em>pets</em></p>
+            <h2 class="page-header">Pet+ <i class="fa fa-paw"></i></h2>
+            <div class="col-sm-3">
+                <div class="well">
+                    <p><img src="{% static 'img/dog.jpg' %}" width="210px"></p>
+                    <p>Descrição do pet que foi achado e precisa ser adotado.</p>
+                    <p><strong>Espécie: </strong>Canina</p>
+                    <p><strong>Raça: </strong>Labrador</p>
+                    <p><strong>Idade: </strong>1 a 3 meses</p>
+                    <p><strong>Gênero: </strong>Macho</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well">
+                    <p><img src="{% static 'img/pastor-alemao.jpg' %}" width="210px"></p>
+                    <p>Descrição do pet que foi achado e precisa ser adotado.</p>
+                    <p><strong>Espécie: </strong>Canina</p>
+                    <p><strong>Raça: </strong>Pastor alemão</p>
+                    <p><strong>Idade: </strong>Acima de 3 ano</p>
+                    <p><strong>Gênero: </strong>Fêmea</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well">
+                    <p><img src="{% static 'img/cat.jpg' %}" width="210px"></p>
+                    <p>Descrição do pet que foi achado e precisa ser adotado.</p>
+                    <p><strong>Espécie: </strong>Felina</p>
+                    <p><strong>Raça: </strong>SRD</p>
+                    <p><strong>Idade: </strong>1 a 3 meses</p>
+                    <p><strong>Gênero: </strong>Fêmea</p>
+                </div>
+            </div>
+            <div class="col-sm-3">
+                <div class="well">
+                    <p><img src="{% static 'img/dog.jpg' %}" width="210px"></p>
+                    <p>Descrição do pet que foi achado e precisa ser adotado.</p>
+                    <p><strong>Espécie: </strong>Canina</p>
+                    <p><strong>Raça: </strong>Labrador</p>
+                    <p><strong>Idade: </strong>1 a 3 meses</p>
+                    <p><strong>Gênero: </strong>Macho</p>
+                </div>
+            </div>
         </div>
     </section>
 {% endblock %}

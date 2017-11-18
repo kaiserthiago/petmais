@@ -10,6 +10,5 @@ def contato(request):
     return render(request, 'portal/contato.html', {})
 
 
-@login_required
 def sobre(request):
     return render(request, 'portal/sobre.html', {})
