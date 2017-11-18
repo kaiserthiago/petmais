@@ -30,11 +30,12 @@ body {margin:0;}
     padding: 12px 0;
     transition: all 0.3s ease;
     color: white;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .icon-bar a:hover {
     background-color: #000;
+    text-decoration: none
 }
 
 .active {
