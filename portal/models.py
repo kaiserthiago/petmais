@@ -5,10 +5,22 @@ from django.db import models
 class Especie(models.Model):
     descricao = models.CharField(max_length=150)
 
+    class Meta:
+        verbose_name_plural = 'Espécies'
+
+    def __str__(self):
+        return self.descricao
+
 
 class Raca(models.Model):
     descricao = models.CharField(max_length=150)
     especie = models.ForeignKey(Especie)
+
+    class Meta:
+        verbose_name_plural = 'Raças'
+
+    def __str__(self):
+        return self.descricao
 
 
 class Pet(models.Model):
@@ -64,6 +76,12 @@ class Pet(models.Model):
     uf = models.CharField(max_length=20, choices=uf_escolhas, default='RO')
     cidade = models.CharField(max_length=150)
     contato = models.CharField(max_length=255, blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = 'Pets'
+
+    def __str__(self):
+        return self.nome
 
 class UserProfile(models.Model):
     usuario = models.OneToOneField(User, unique=True)
