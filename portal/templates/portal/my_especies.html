@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Meus Pets - Pet+{% endblock %}
+{% load static %}
+
+{% block content %}
+    <section class="section-content">
+        <div class="container">
+            <h2 class="page-header">Espécies</h2>
+            <p><a href="{% url 'especie_new' %}">
+                <span class="fa fa-plus-circle"></span>
+                Nova especie</a>
+            </p>
+            <table class="table table-striped">
+                <thead>
+                <th>#</th>
+                <th>Descrição</th>
+                <th>Ações</th>
+                </thead>
+                <tbody>
+                {% for especie in especies %}
+                    <tr>
+                        <td style="vertical-align: middle">{{ especie.id }}</td>
+                        <td style="vertical-align: middle">{{ especie.descricao }}</td>
+                        <td style="vertical-align: middle">
+                            <a href="{% url 'especie_edit' especie.id %}" class="btn btn-warning" title="Editar"><span
+                                    class="fa fa-edit"></span></a>
+{#                            <a href="{% url 'especie_delete' especie.slug %}" class="btn btn-danger"#}
+{#                               title="Excluir"><span#}
+{#                                    class="fa fa-close"></span></a>#}
+{#                            <a href="{% url 'pet_question' pet.slug %}" class="btn btn-danger"#}
+{#                               title="Perguntas"><span#}
+{#                                    class="fa fa-question-circle-o"></span>#}
+{#                                {% if product.question_no_answer.count >= 1 %}#}
+{#                                    ({{ product.question_no_answer.count }})#}
+{#                                {% endif %}#}
+{#                            </a>#}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center alert-warning">
+                            Nenhuma espécie cadastrada
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

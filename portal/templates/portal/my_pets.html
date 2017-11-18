@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Meus Pets - Pet+{% endblock %}
+{% block class_pets %} class="active" {% endblock %}
+{% load static %}
+
+{% block content %}
+    <section class="section-content">
+        <div class="container">
+            <h2 class="page-header">Meus pets</h2>
+            <p><a href="{% url 'pet_new' %}">
+                <span class="fa fa-plus-circle"></span>
+                Novo pet</a>
+            </p>
+            <table class="table table-striped">
+                <thead>
+                <th>#</th>
+                <th>Nome</th>
+                <th>Espécie</th>
+                <th>Raça</th>
+                <th>Status</th>
+                </thead>
+                <tbody>
+                {% for pet in pets %}
+                    <tr>
+                        <td style="vertical-align: middle">{{ pet.id }}</td>
+                        <td style="vertical-align: middle">{{ pet.nome }}</td>
+                        <td style="vertical-align: middle">{{ pet.raca }}</td>
+                        <td style="vertical-align: middle">{{ pet.status }}</td>
+                        <td style="vertical-align: middle">
+                            <a href="{% url 'pet_edit' product.id %}" class="btn btn-warning" title="Editar"><span
+                                    class="fa fa-pencil"></span></a>
+                            <a href="{% url 'pet_show' product.slug %}" class="btn btn-primary"
+                               title="Visualizar"><span
+                                    class="fa fa-search"></span></a>
+{#                            <a href="{% url 'pet_question' pet.slug %}" class="btn btn-danger"#}
+{#                               title="Perguntas"><span#}
+{#                                    class="fa fa-question-circle-o"></span>#}
+{#                                {% if product.question_no_answer.count >= 1 %}#}
+{#                                    ({{ product.question_no_answer.count }})#}
+{#                                {% endif %}#}
+{#                            </a>#}
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="5" class="text-center alert-warning">
+                            Nenhum pet cadastrado
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+{% endblock %}

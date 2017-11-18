@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Nova espécie - Pet+{% endblock %}
+{% load static %}
+
+{% block content %}
+    <section class="section-content">
+        <div class="container">
+            <h2 class="page-header">Nova espécie</h2>
+            <form action="{% url 'especie_new' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                    <input type="submit" class="btn btn-success" value="Adicionar">
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock %}

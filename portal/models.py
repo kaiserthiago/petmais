@@ -1,9 +1,11 @@
 from django.contrib.auth.models import User
 from django.db import models
+from django.template.defaultfilters import slugify
 
 
 class Especie(models.Model):
     descricao = models.CharField(max_length=150)
+    slug = models.SlugField(unique=True)
 
     class Meta:
         verbose_name_plural = 'Espécies'
@@ -11,9 +13,17 @@ class Especie(models.Model):
     def __str__(self):
         return self.descricao
 
+    def save(self, *args, **kwargs):
+        is_new = self.pk is None
+        if is_new:
+            super(Especie, self).save()
+            self.slug = '%s-%i' % (slugify(self.descricao), self.id)
+        super(Especie, self).save(*args, **kwargs)
+
 
 class Raca(models.Model):
     descricao = models.CharField(max_length=150)
+    slug = models.SlugField(unique=True)
     especie = models.ForeignKey(Especie)
 
     class Meta:
@@ -22,13 +32,26 @@ class Raca(models.Model):
     def __str__(self):
         return self.descricao
 
+    def save(self, *args, **kwargs):
+        is_new = self.pk is None
+        if is_new:
+            super(Raca, self).save()
+            self.slug = '%s-%i' % (slugify(self.descricao), self.id)
+        super(Raca, self).save(*args, **kwargs)
+
 
 class Pet(models.Model):
     user = models.ForeignKey(User)
     nome = models.CharField(max_length=150)
+    slug = models.SlugField(unique=True)
     especie = models.ForeignKey(Especie)
     raca = models.ForeignKey(Raca)
     foto = models.ImageField(upload_to='img_pets')
+    STATUS_CHOICES = (
+        ('Disponível', 'Disponível'),
+        ('Adotado', 'Adotado'),
+    )
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Disponível")
     IDADE_CHOICES = (
         ('1 a 3 meses', '1 a 3 meses'),
         ('3 a 6 meses', '3 a 6 meses'),
@@ -82,6 +105,14 @@ class Pet(models.Model):
 
     def __str__(self):
         return self.nome
+
+    def save(self, *args, **kwargs):
+        is_new = self.pk is None
+        if is_new:
+            super(Pet, self).save()
+            self.slug = '%s-%i' % (slugify(self.nome), self.id)
+        super(Pet, self).save(*args, **kwargs)
+
 
 class UserProfile(models.Model):
     usuario = models.OneToOneField(User, unique=True)
