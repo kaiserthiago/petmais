@@ -16,7 +16,9 @@ def register(request):
             User.objects.create_user(
                 username=form.cleaned_data['username'].lower(),
                 password=form.cleaned_data['password'],
-                email=form.cleaned_data['email']
+                email=form.cleaned_data['email'],
+                firstname=form.cleaned_data['first_name'],
+                lastname=form.cleaned_data['last_name']
             )
             new_user = authenticate(username=form.cleaned_data['username'],
                                     password=form.cleaned_data['password'],
