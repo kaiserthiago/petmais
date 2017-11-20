@@ -148,3 +148,14 @@ class UserProfile(models.Model):
         ('TO', 'TO')
     )
     estado = models.CharField(max_length=20, choices=uf_escolhas, default='RO')
+
+
+class Contato(models.Model):
+    user = models.ForeignKey(User, blank=True, null=True)
+    nome = models.CharField(max_length=255)
+    email = models.EmailField(max_length=255)
+    comentario = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.nome

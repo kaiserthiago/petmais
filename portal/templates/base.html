@@ -21,13 +21,19 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="{% url 'home' %}"><i class="fa fa-home"></i> Adote</a>
-    <a href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo pet</a>
+    <a href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo Pet</a>
     <a href="{% url 'my_pets' %}"><i class="fa fa-paw"></i> Meus Pets </a>
     <a href="{% url 'sobre' %}"><i class="fa fa-question-circle-o"></i> Sobre</a>
     <a href="{% url 'contato' %}"><i class="fa fa-envelope"></i> Contato</a>
+    <hr>
     {% if request.user.is_authenticated %}
+        {% if request.user.is_staff %}
+            <a href="{% url 'admin:login' %}" target="_blank"><i class="fa fa-tasks"></i> Painel ADM</a>
+        {% endif %}
         <a href="#"><i class="fa fa-question-circle-o"></i> Minhas perguntas</a>
         <a href="#"><i class="fa fa-user-circle-o"></i> Minha conta</a>
+        <hr>
+        <a href="{% url 'logout' %}"><i class="fa fa-power-off"></i> Sair</a>
     {% else %}
         <a href="{% url 'login' %}"><i class="fa fa-lock"></i> Login</a>
     {% endif %}

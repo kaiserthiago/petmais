@@ -1,8 +1,8 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 
-from portal.forms import PetForm, EspecieForm
-from portal.models import Pet, Especie
+from portal.forms import PetForm, ContatoForm
+from portal.models import Pet, Contato
 
 
 def home(request):
@@ -10,7 +10,25 @@ def home(request):
 
 
 def contato(request):
-    return render(request, 'portal/contato.html', {})
+    if request.method == 'POST':
+        form = ContatoForm(request.POST)
+
+        if form.is_valid():
+            contato = Contato()
+
+            contato.nome = form.cleaned_data['nome']
+            contato.email = form.cleaned_data['email']
+            contato.comentario = form.cleaned_data['comentario']
+
+            contato.save()
+
+            return redirect('contato')
+
+    form = ContatoForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'portal/contato.html', context)
 
 
 def sobre(request):
