@@ -21,17 +21,17 @@
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="{% url 'home' %}"><i class="fa fa-home"></i> Adote</a>
-    <a href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo Pet</a>
-    <a href="{% url 'my_pets' %}"><i class="fa fa-paw"></i> Meus Pets </a>
-    <a href="{% url 'sobre' %}"><i class="fa fa-question-circle"></i> Sobre</a>
     <a href="{% url 'contato' %}"><i class="fa fa-envelope"></i> Contato</a>
+    <a href="{% url 'sobre' %}"><i class="fa fa-question-circle"></i> Sobre</a>
+    <a href="#"><i class="fa fa-paw"></i> Quero adotar</a>
     <hr>
     {% if request.user.is_authenticated %}
-        <a href="#"><i class="fa fa-question-circle"></i> Minhas perguntas</a>
+        <a href="{% url 'my_pets' %}"><i class="fa fa-paw"></i> Meus pets</a>
+        <a href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo pet</a>
         <a href="#"><i class="fa fa-user-circle"></i> Minha conta</a>
+        <a href="#"><i class="fa fa-question-circle"></i> Minhas perguntas</a>
         <hr>
         {% if request.user.is_staff %}
-            <a href="{% url 'admin:login' %}" target="_blank"><i class="fa fa-tasks"></i> Painel ADM</a>
             <a href="{% url 'especies' %}"><i class="fa fa-paw"></i> Espécies</a>
             <a href="{% url 'racas' %}"><i class="fa fa-github-alt"></i> Raças</a>
             <hr>
@@ -44,15 +44,17 @@
 </div>
 
 
-<div class="icon-bar2">
-    <a href="#" onclick="openNav()" style="cursor:pointer"><i class="fa fa-bars"></i></a>
-    <a href="#" style="float: right; cursor:pointer"><i class="fa fa-filter"></i></a>
-</div>
+{#<div class="icon-bar2">#}
+{#    <a href="#" onclick="openNav()" style="cursor:pointer"><i class="fa fa-bars"></i></a>#}
+{#    <a href="#" style="float: right; cursor:pointer"><i class="fa fa-filter"></i></a>#}
+{#</div>#}
 
 <div class="icon-bar">
+    <a href="#" onclick="openNav()" style="cursor:pointer; width: 10%; background-color: black"><i
+            class="fa fa-bars"></i></a>
     <a {% block class_home %}{% endblock %} href="{% url 'home' %}"><i class="fa fa-home"></i> Adote</a>
-    <a {% block class_new %}{% endblock %} href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo Pet</a>
-    <a {% block class_pets %}{% endblock %} href="{% url 'my_pets' %}"><i class="fa fa-paw"></i> Meus Pets</a>
+    <a {% block class_new %}{% endblock %} href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo pet</a>
+    <a {% block class_pets %}{% endblock %} href="#"><i class="fa fa-paw"></i> Eu quero!</a>
 </div>
 
 <section class="section-content">
