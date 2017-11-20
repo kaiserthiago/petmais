@@ -32,12 +32,13 @@
         <hr>
         {% if request.user.is_staff %}
             <a href="{% url 'admin:login' %}" target="_blank"><i class="fa fa-tasks"></i> Painel ADM</a>
-            <a href="{% url 'my_especies' %}"><i class="fa fa-paw"></i> Espécies</a>
+            <a href="{% url 'especies' %}"><i class="fa fa-paw"></i> Espécies</a>
+            <a href="{% url 'racas' %}"><i class="fa fa-github-alt"></i> Raças</a>
             <hr>
         {% endif %}
         <a href="{% url 'logout' %}"><i class="fa fa-power-off"></i> Sair</a>
     {% else %}
-        <a href="{% url 'login' %}"><i class="fa fa-lock"></i> Login</a>
+        <a href="{% url 'login' %}"><i class="fa fa-lock"></i> Acesso</a>
     {% endif %}
 
 </div>
@@ -54,7 +55,11 @@
     <a {% block class_pets %}{% endblock %} href="{% url 'my_pets' %}"><i class="fa fa-paw"></i> Meus Pets</a>
 </div>
 
-{% block content %} {% endblock %}
+<section class="section-content">
+    <div class="container-fluid">
+        {% block content %} {% endblock %}
+    </div>
+</section>
 
 <!--FOOTER-->
 <footer class="footer-pet">

@@ -1,35 +1,32 @@
 {% extends 'base.html' %}
-{% block title %}Meus Pets - Pet+{% endblock %}
-{% block class_pets %} class="active" {% endblock %}
+{% block title %}Raças - Pet+{% endblock %}
 {% load static %}
 
 {% block content %}
-    <h2 class="page-header">Meus pets</h2>
-    <p><a href="{% url 'pet_new' %}">
+    <h2 class="page-header">Raças de animais</h2>
+    <p><a href="{% url 'raca_new' %}">
         <span class="fa fa-plus-circle"></span>
-        Novo pet</a>
+        Adicionar raça</a>
     </p>
     <table class="table table-striped">
         <thead>
         <th>#</th>
-        <th>Nome</th>
-        <th>Espécie</th>
         <th>Raça</th>
-        <th>Status</th>
+        <th>Espécie</th>
+        <th>Ações</th>
         </thead>
         <tbody>
-        {% for pet in pets %}
+        {% for raca in racas %}
             <tr>
-                <td style="vertical-align: middle">{{ pet.id }}</td>
-                <td style="vertical-align: middle">{{ pet.nome }}</td>
-                <td style="vertical-align: middle">{{ pet.raca }}</td>
-                <td style="vertical-align: middle">{{ pet.status }}</td>
+                <td style="vertical-align: middle">{{ raca.id }}</td>
+                <td style="vertical-align: middle">{{ raca.descricao }}</td>
+                <td style="vertical-align: middle">{{ raca.especie }}</td>
                 <td style="vertical-align: middle">
-                    <a href="{% url 'pet_edit' pet.slug %}" class="btn btn-warning" title="Editar"><span
-                            class="fa fa-pencil"></span></a>
-                    <a href="{% url 'pet_show' pet.slug %}" class="btn btn-primary"
-                       title="Visualizar"><span
-                            class="fa fa-search"></span></a>
+                    <a href="{% url 'raca_edit' raca.id %}" class="btn btn-warning" title="Editar"><span
+                            class="fa fa-edit"></span></a>
+                    {#                            <a href="{% url 'especie_delete' especie.slug %}" class="btn btn-danger"#}
+                    {#                               title="Excluir"><span#}
+                    {#                                    class="fa fa-close"></span></a>#}
                     {#                            <a href="{% url 'pet_question' pet.slug %}" class="btn btn-danger"#}
                     {#                               title="Perguntas"><span#}
                     {#                                    class="fa fa-question-circle-o"></span>#}
@@ -41,8 +38,8 @@
             </tr>
         {% empty %}
             <tr>
-                <td colspan="5" class="text-center alert-warning">
-                    Nenhum pet cadastrado
+                <td colspan="4" class="text-center alert-warning">
+                    Nenhuma raça cadastrada
                 </td>
             </tr>
         {% endfor %}

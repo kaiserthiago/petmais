@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
-{% block title %}Nova espécie - Pet+{% endblock %}
+{% block title %}Nova raça - Pet+{% endblock %}
 {% load static %}
 
 {% block content %}
-    <h2 class="page-header">Nova espécie</h2>
-    <form action="{% url 'especie_new' %}" method="POST">
+    <h2 class="page-header">Nova raça</h2>
+    <form action="{% url 'raca_new' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
             {{ form.as_p }}

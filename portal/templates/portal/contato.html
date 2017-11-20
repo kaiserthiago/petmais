@@ -3,27 +3,23 @@
 {% block class_contato %} class="active" {% endblock %}
 
 {% block content %}
-    <section class="section-content">
-        <div class="container">
-            <br>
-            <div class="row">
-                <div class="col-sm-5">
-                    <form action="{% url 'contato' %}" method="POST">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            {{ form.as_p }}
-                            <input type="submit" class="btn btn-success btn-block" value="Enviar">
-                        </div>
-                    </form>
+    <br>
+    <div class="row">
+        <div class="col-sm-5">
+            <form action="{% url 'contato' %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    {{ form.as_p }}
+                    <input type="submit" class="btn btn-success btn-block" value="Enviar">
                 </div>
-                <div class="col-sm-7">
-                    <div id="googleMap" style="width:100%;height:400px;">
+            </form>
+        </div>
+        <div class="col-sm-7">
+            <div id="googleMap" style="width:100%;height:400px;">
 
-                    </div>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
     <script>
         function myMap() {
             var mapProp = {

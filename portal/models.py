@@ -22,9 +22,10 @@ class Especie(models.Model):
 
 
 class Raca(models.Model):
+    especie = models.ForeignKey(Especie)
     descricao = models.CharField(max_length=150)
     slug = models.SlugField(unique=True)
-    especie = models.ForeignKey(Especie)
+
 
     class Meta:
         verbose_name_plural = 'Raças'
@@ -46,7 +47,7 @@ class Pet(models.Model):
     slug = models.SlugField(unique=True)
     especie = models.ForeignKey(Especie)
     raca = models.ForeignKey(Raca)
-    foto = models.ImageField(upload_to='img_pets')
+    foto = models.ImageField(upload_to='img_pets', blank=True)
     STATUS_CHOICES = (
         ('Disponível', 'Disponível'),
         ('Adotado', 'Adotado'),

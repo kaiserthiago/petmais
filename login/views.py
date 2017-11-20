@@ -18,12 +18,11 @@ def register(request):
                 password=form.cleaned_data['password'],
                 email=form.cleaned_data['email']
             )
-            messages.info(request, "Thanks for registering. You are now logged in.")
             new_user = authenticate(username=form.cleaned_data['username'],
                                     password=form.cleaned_data['password'],
                                     )
             login(request, new_user)
-            return HttpResponseRedirect(reverse('login_register_success'))
+            return redirect('home')
     else:
         form = RegistroForm()
 

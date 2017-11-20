@@ -4,16 +4,12 @@
 {% load static %}
 
 {% block content %}
-    <section class="section-content">
-        <div class="container">
             <h2 class="page-header">Novo pet</h2>
-            <form action="{% url 'pet_new' %}" method="POST">
+            <form action="{% url 'pet_new' %}" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
                 <div class="form-group">
                     {{ form.as_p }}
                     <input type="submit" class="btn btn-success" value="Adicionar">
                 </div>
             </form>
-        </div>
-    </section>
 {% endblock %}
