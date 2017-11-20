@@ -117,8 +117,10 @@ class Pet(models.Model):
 
 class UserProfile(models.Model):
     usuario = models.OneToOneField(User, unique=True)
+    telefone = models.CharField(max_length=30, null=True, blank=True)
     endereco = models.CharField(max_length=255, null=True, blank=True)
     cidade = models.CharField(max_length=150, null=True, blank=True)
+    foto = models.ImageField(upload_to='img_user', blank=True, default='static/img/user.png')
     uf_escolhas = (
         ('AC', 'AC'),
         ('AL', 'AL'),
@@ -149,6 +151,7 @@ class UserProfile(models.Model):
         ('TO', 'TO')
     )
     estado = models.CharField(max_length=20, choices=uf_escolhas, default='RO')
+
 
 
 class Contato(models.Model):

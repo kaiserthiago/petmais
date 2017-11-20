@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -118,6 +119,14 @@ def my_pets(request):
 
     return render(request, 'portal/my_pets.html', context)
 
+def pet_show(request, slug):
+    pet = get_object_or_404(Pet, slug=slug)
+
+    context = {
+        'pet': pet,
+    }
+
+    return render(request, 'portal/pet_show.html', context)
 
 @login_required
 def pet_new(request):

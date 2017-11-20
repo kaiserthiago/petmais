@@ -8,7 +8,7 @@ urlpatterns = [
     url(r'^sobre$', views.sobre, name='sobre'),
 
     url(r'^my_pets$', views.my_pets, name='my_pets'),
-    url(r'^pet_show/(?P<slug>[-\w\d]+)$', views.pet_new, name='pet_show'),
+    url(r'^pet_show/(?P<slug>[-\w\d]+)$', views.pet_show, name='pet_show'),
     url(r'^pet_edit/(?P<slug>[-\w\d]+)$', views.pet_edit, name='pet_edit'),
     url(r'^pet_new$', views.pet_new, name='pet_new'),
 

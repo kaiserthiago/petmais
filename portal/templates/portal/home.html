@@ -18,7 +18,7 @@
                             <br>
                             <p><strong><i class="fa fa-paw"></i> {{ pet.nome }}</strong></p>
                             <p><i class="fa fa-github-alt"></i> {{ pet.raca }}</p>
-                            <p><i class="fa fa-map-marker"></i> {{ pet.cidade }}/{{ pet.uf }}</p>
+                            <p><i class="fa fa-map-marker"></i> {{ pet.cidade }} - {{ pet.uf }}</p>
                             <p><i class="fa fa-pencil"></i> {{ pet.descricao|truncatechars:100 }} </p>
                             <a href="{% url 'pet_show' pet.slug %}" class="more-link">Ver mais...</a>
                         </div>

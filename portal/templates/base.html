@@ -23,12 +23,12 @@
     <a href="{% url 'home' %}"><i class="fa fa-home"></i> Adote</a>
     <a href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo Pet</a>
     <a href="{% url 'my_pets' %}"><i class="fa fa-paw"></i> Meus Pets </a>
-    <a href="{% url 'sobre' %}"><i class="fa fa-question-circle-o"></i> Sobre</a>
+    <a href="{% url 'sobre' %}"><i class="fa fa-question-circle"></i> Sobre</a>
     <a href="{% url 'contato' %}"><i class="fa fa-envelope"></i> Contato</a>
     <hr>
     {% if request.user.is_authenticated %}
-        <a href="#"><i class="fa fa-question-circle-o"></i> Minhas perguntas</a>
-        <a href="#"><i class="fa fa-user-circle-o"></i> Minha conta</a>
+        <a href="#"><i class="fa fa-question-circle"></i> Minhas perguntas</a>
+        <a href="#"><i class="fa fa-user-circle"></i> Minha conta</a>
         <hr>
         {% if request.user.is_staff %}
             <a href="{% url 'admin:login' %}" target="_blank"><i class="fa fa-tasks"></i> Painel ADM</a>
