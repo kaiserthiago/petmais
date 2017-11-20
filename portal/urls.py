@@ -10,7 +10,7 @@ urlpatterns = [
     url(r'^my_pets$', views.my_pets, name='my_pets'),
     url(r'^pet_new$', views.pet_new, name='pet_new'),
 
-    # url(r'^my_especies$', views.my_especies, name='my_especies'),
-    # url(r'^especie_edit/(?P<slug>[-\w\d]+)$', views.especie_new, name='especie_edit'),
-    # url(r'^especie_new$', views.especie_new, name='especie_new'),
+    url(r'^my_especies$', views.my_especies, name='my_especies'),
+    url(r'^especie_edit/(?P<slug>[-\w\d]+)$', views.especie_new, name='especie_edit'),
+    url(r'^especie_new$', views.especie_new, name='especie_new'),
 ]

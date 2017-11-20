@@ -1,3 +1,5 @@
+from django.contrib import messages
+from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response, redirect
@@ -12,10 +14,15 @@ def register(request):
         form = RegistroForm(request.POST)
         if form.is_valid():
             User.objects.create_user(
-                username=form.cleaned_data['username'],
+                username=form.cleaned_data['username'].lower(),
                 password=form.cleaned_data['password'],
                 email=form.cleaned_data['email']
             )
+            messages.info(request, "Thanks for registering. You are now logged in.")
+            new_user = authenticate(username=form.cleaned_data['username'],
+                                    password=form.cleaned_data['password'],
+                                    )
+            login(request, new_user)
             return HttpResponseRedirect(reverse('login_register_success'))
     else:
         form = RegistroForm()

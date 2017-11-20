@@ -27,12 +27,14 @@
     <a href="{% url 'contato' %}"><i class="fa fa-envelope"></i> Contato</a>
     <hr>
     {% if request.user.is_authenticated %}
-        {% if request.user.is_staff %}
-            <a href="{% url 'admin:login' %}" target="_blank"><i class="fa fa-tasks"></i> Painel ADM</a>
-        {% endif %}
         <a href="#"><i class="fa fa-question-circle-o"></i> Minhas perguntas</a>
         <a href="#"><i class="fa fa-user-circle-o"></i> Minha conta</a>
         <hr>
+        {% if request.user.is_staff %}
+            <a href="{% url 'admin:login' %}" target="_blank"><i class="fa fa-tasks"></i> Painel ADM</a>
+            <a href="{% url 'my_especies' %}"><i class="fa fa-paw"></i> Espécies</a>
+            <hr>
+        {% endif %}
         <a href="{% url 'logout' %}"><i class="fa fa-power-off"></i> Sair</a>
     {% else %}
         <a href="{% url 'login' %}"><i class="fa fa-lock"></i> Login</a>

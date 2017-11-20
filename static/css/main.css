@@ -103,13 +103,13 @@ body {
 .sidenav a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
-    font-size: 22px;
+    font-size: 16px;
     color: #818181;
     display: block;
     transition: 0.3s;
 }
 
-.sidenav a:hover {
+.sidenav a:hover, a:active {
     color: #f1f1f1;
     text-decoration: none;
 }
