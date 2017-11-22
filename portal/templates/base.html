@@ -43,18 +43,12 @@
 
 </div>
 
-
-{#<div class="icon-bar2">#}
-{#    <a href="#" onclick="openNav()" style="cursor:pointer"><i class="fa fa-bars"></i></a>#}
-{#    <a href="#" style="float: right; cursor:pointer"><i class="fa fa-filter"></i></a>#}
-{#</div>#}
-
 <div class="icon-bar">
-    <a href="#" onclick="openNav()" style="cursor:pointer; width: 10%; background-color: black"><i
+    <a href="#" onclick="openNav()" style="cursor:pointer; width: 10%"><i
             class="fa fa-bars"></i></a>
     <a {% block class_home %}{% endblock %} href="{% url 'home' %}"><i class="fa fa-home"></i> Adote</a>
     <a {% block class_new %}{% endblock %} href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo pet</a>
-    <a {% block class_pets %}{% endblock %} href="#"><i class="fa fa-paw"></i> Eu quero!</a>
+    <a {% block class_quero %}{% endblock %} href="#"><i class="fa fa-paw"></i> Eu quero!</a>
 </div>
 
 <section class="section-content">
@@ -113,10 +107,12 @@
 <script>
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     }
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+        document.body.style.backgroundColor = "white";
     }
 </script>
 </html>

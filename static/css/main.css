@@ -17,6 +17,8 @@
 
 body {
     margin: 0;
+    font-family: "Lato", sans-serif;
+    transition: background-color .5s;
 }
 
 .icon-bar {
@@ -37,28 +39,6 @@ body {
 
 .icon-bar a:hover {
     background-color: #000;
-    text-decoration: none;
-    color: white;
-}
-
-.icon-bar2 {
-    width: 100%;
-    background-color: #000;
-    overflow: auto;
-}
-
-.icon-bar2 a {
-    float: left;
-    width: 20%;
-    text-align: center;
-    padding: 12px 0;
-    transition: all 0.3s ease;
-    color: white;
-    font-size: 20px;
-}
-
-.icon-bar2 a:hover {
-    background-color: #555;
     text-decoration: none;
     color: white;
 }
