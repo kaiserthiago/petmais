@@ -126,6 +126,7 @@ class PetQuestion(models.Model):
     user = models.ForeignKey(User)
     pet = models.ForeignKey('Pet')
     question = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
         verbose_name_plural = 'Perguntas'

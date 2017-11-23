@@ -5,7 +5,7 @@ from portal.models import Raca, Especie, Pet, Contato, PetAnswer
 
 class PetQuestionForm(forms.Form):
     question = forms.CharField(
-        label='Perguntar',
+        label='',
         widget=forms.Textarea(attrs={'class': 'form-control', 'id': 'question', 'placeholder': 'Faça sua pergunta...'}),
         required=True
     )
@@ -24,7 +24,7 @@ class AnswerQuestionForm(forms.ModelForm):
         }
 
         labels = {
-            'answer': 'Resposta'
+            'answer': ''
         }
 
 

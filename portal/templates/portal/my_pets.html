@@ -32,6 +32,8 @@
                 <td style="vertical-align: middle">{{ pet.raca }}</td>
                 <td style="vertical-align: middle">{{ pet.status }}</td>
                 <td style="vertical-align: middle">
+                    <a href="#" class="btn btn-success" title="Adotar"><span
+                            class="fa fa-check-square-o"></span></a>
                     <a href="{% url 'pet_edit' pet.slug %}" class="btn btn-warning" title="Editar"><span
                             class="fa fa-pencil"></span></a>
                     <a href="{% url 'pet_show' pet.slug %}" class="btn btn-primary"

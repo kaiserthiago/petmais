@@ -122,7 +122,7 @@ def my_pets(request):
 
 def pet_show(request, slug):
     pet = get_object_or_404(Pet, slug=slug)
-    questions = PetQuestion.objects.filter(pet=pet)
+    questions = PetQuestion.objects.filter(pet=pet).order_by('-created_at')
 
     form = PetQuestionForm()
 

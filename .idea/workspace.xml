@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="073bd1ba-1d02-4e43-8d90-ea42f70b49e5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/admin.py" afterPath="$PROJECT_DIR$/portal/admin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/forms.py" afterPath="$PROJECT_DIR$/portal/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/models.py" afterPath="$PROJECT_DIR$/portal/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/my_pets.html" afterPath="$PROJECT_DIR$/portal/templates/portal/my_pets.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/pet_show.html" afterPath="$PROJECT_DIR$/portal/templates/portal/pet_show.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/views.py" afterPath="$PROJECT_DIR$/portal/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,11 +31,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pet_show.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="475">
+              <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+              <folding>
+                <element signature="e#132#326#0" expanded="false" />
+                <element signature="e#752#1978#0" expanded="false" />
+                <element signature="e#2021#2281#0" expanded="false" />
+                <element signature="e#2321#2735#0" expanded="false" />
+                <element signature="e#2778#3320#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pet_show.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_show.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+            <state relative-caret-position="273">
+              <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
               <folding />
             </state>
           </provider>
@@ -47,34 +67,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/main.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="44">
-              <caret line="182" column="14" lean-forward="false" selection-start-line="182" selection-start-column="14" selection-end-line="182" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="my_pets.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="my_pets.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portal/templates/portal/my_pets.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
+            <state relative-caret-position="373">
+              <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
               <folding>
                 <element signature="e#1054#1084#0#HTML" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="16" column="88" lean-forward="false" selection-start-line="16" selection-start-column="88" selection-end-line="16" selection-end-column="88" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -83,7 +83,7 @@
         <entry file="file://$PROJECT_DIR$/portal/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="222">
-              <caret line="124" column="51" lean-forward="false" selection-start-line="124" selection-start-column="51" selection-end-line="124" selection-end-column="51" />
+              <caret line="124" column="63" lean-forward="false" selection-start-line="124" selection-start-column="63" selection-end-line="124" selection-end-column="63" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
                 <element signature="e#599#1100#0" expanded="false" />
@@ -92,11 +92,23 @@
                 <element signature="e#1865#2294#0" expanded="false" />
                 <element signature="e#2340#2507#0" expanded="false" />
                 <element signature="e#2552#2700#0" expanded="false" />
-                <element signature="e#3060#3976#0" expanded="false" />
-                <element signature="e#4028#4993#0" expanded="false" />
-                <element signature="e#5053#5438#0" expanded="false" />
-                <element signature="e#5494#5640#0" expanded="false" />
-                <element signature="e#5716#6401#0" expanded="false" />
+                <element signature="e#3084#4000#0" expanded="false" />
+                <element signature="e#4052#5017#0" expanded="false" />
+                <element signature="e#5077#5462#0" expanded="false" />
+                <element signature="e#5518#5664#0" expanded="false" />
+                <element signature="e#5740#6425#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/admin.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="748">
+              <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -105,16 +117,15 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portal/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+            <state relative-caret-position="400">
+              <caret line="128" column="55" lean-forward="false" selection-start-line="128" selection-start-column="55" selection-end-line="128" selection-end-column="55" />
               <folding>
                 <element signature="e#159#606#0" expanded="false" />
                 <element signature="e#639#1118#0" expanded="false" />
                 <element signature="e#1150#3571#0" expanded="false" />
-                <element signature="e#3611#3904#0" expanded="false" />
-                <element signature="e#3942#4164#0" expanded="false" />
-                <element signature="e#4204#5256#0" expanded="false" />
-                <element signature="e#5292#5577#0" expanded="false" />
+                <element signature="e#3999#4221#0" expanded="false" />
+                <element signature="e#4261#5313#0" expanded="false" />
+                <element signature="e#5349#5634#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -192,7 +203,6 @@
         <option value="$PROJECT_DIR$/login/templates/registration/success.html" />
         <option value="$PROJECT_DIR$/petmais/urls.py" />
         <option value="$PROJECT_DIR$/petmais/settings.py" />
-        <option value="$PROJECT_DIR$/portal/admin.py" />
         <option value="$PROJECT_DIR$/portal/templates/portal/my_especies.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/especie_new.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/especies.html" />
@@ -206,16 +216,17 @@
         <option value="$PROJECT_DIR$/portal/templates/portal/pet_new.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/sobre.html" />
         <option value="$PROJECT_DIR$/login/templates/registration/login.html" />
-        <option value="$PROJECT_DIR$/portal/models.py" />
-        <option value="$PROJECT_DIR$/portal/forms.py" />
         <option value="$PROJECT_DIR$/portal/urls.py" />
         <option value="$PROJECT_DIR$/static/css/main.css" />
-        <option value="$PROJECT_DIR$/portal/views.py" />
         <option value="$PROJECT_DIR$/portal/templates/portal/pet_resposta_pergunta.html" />
         <option value="$PROJECT_DIR$/portal/templates/base.html" />
-        <option value="$PROJECT_DIR$/portal/templates/portal/my_pets.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/pet_pergunta.html" />
+        <option value="$PROJECT_DIR$/portal/models.py" />
+        <option value="$PROJECT_DIR$/portal/admin.py" />
+        <option value="$PROJECT_DIR$/portal/views.py" />
         <option value="$PROJECT_DIR$/portal/templates/portal/pet_show.html" />
+        <option value="$PROJECT_DIR$/portal/forms.py" />
+        <option value="$PROJECT_DIR$/portal/templates/portal/my_pets.html" />
       </list>
     </option>
   </component>
@@ -572,13 +583,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="32" column="41" lean-forward="false" selection-start-line="32" selection-start-column="41" selection-end-line="32" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -687,21 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="13" column="42" lean-forward="false" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-            <element signature="e#385#730#0" expanded="false" />
-            <element signature="e#769#1995#0" expanded="false" />
-            <element signature="e#2038#2298#0" expanded="false" />
-            <element signature="e#2338#2752#0" expanded="false" />
-            <element signature="e#2795#3337#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -726,48 +715,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="124" column="51" lean-forward="false" selection-start-line="124" selection-start-column="51" selection-end-line="124" selection-end-column="51" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-            <element signature="e#599#1100#0" expanded="false" />
-            <element signature="e#1223#1623#0" expanded="false" />
-            <element signature="e#1666#1819#0" expanded="false" />
-            <element signature="e#1865#2294#0" expanded="false" />
-            <element signature="e#2340#2507#0" expanded="false" />
-            <element signature="e#2552#2700#0" expanded="false" />
-            <element signature="e#3060#3976#0" expanded="false" />
-            <element signature="e#4028#4993#0" expanded="false" />
-            <element signature="e#5053#5438#0" expanded="false" />
-            <element signature="e#5494#5640#0" expanded="false" />
-            <element signature="e#5716#6401#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/main.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="182" column="14" lean-forward="false" selection-start-line="182" selection-start-column="14" selection-end-line="182" selection-end-column="14" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
-          <folding>
-            <element signature="e#159#606#0" expanded="false" />
-            <element signature="e#639#1118#0" expanded="false" />
-            <element signature="e#1150#3571#0" expanded="false" />
-            <element signature="e#3611#3904#0" expanded="false" />
-            <element signature="e#3942#4164#0" expanded="false" />
-            <element signature="e#4204#5256#0" expanded="false" />
-            <element signature="e#5292#5577#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,16 +739,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/portal/my_pets.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="573">
-          <caret line="52" column="21" lean-forward="true" selection-start-line="52" selection-start-column="21" selection-end-line="52" selection-end-column="21" />
-          <folding>
-            <element signature="e#1054#1084#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_pergunta.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="248">
@@ -813,11 +755,81 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/portal/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="128" column="55" lean-forward="false" selection-start-line="128" selection-start-column="55" selection-end-line="128" selection-end-column="55" />
+          <folding>
+            <element signature="e#159#606#0" expanded="false" />
+            <element signature="e#639#1118#0" expanded="false" />
+            <element signature="e#1150#3571#0" expanded="false" />
+            <element signature="e#3999#4221#0" expanded="false" />
+            <element signature="e#4261#5313#0" expanded="false" />
+            <element signature="e#5349#5634#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="748">
+          <caret line="53" column="28" lean-forward="true" selection-start-line="53" selection-start-column="28" selection-end-line="53" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="124" column="63" lean-forward="false" selection-start-line="124" selection-start-column="63" selection-end-line="124" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#57#0" expanded="true" />
+            <element signature="e#599#1100#0" expanded="false" />
+            <element signature="e#1223#1623#0" expanded="false" />
+            <element signature="e#1666#1819#0" expanded="false" />
+            <element signature="e#1865#2294#0" expanded="false" />
+            <element signature="e#2340#2507#0" expanded="false" />
+            <element signature="e#2552#2700#0" expanded="false" />
+            <element signature="e#3084#4000#0" expanded="false" />
+            <element signature="e#4052#5017#0" expanded="false" />
+            <element signature="e#5077#5462#0" expanded="false" />
+            <element signature="e#5518#5664#0" expanded="false" />
+            <element signature="e#5740#6425#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_show.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="60" column="28" lean-forward="true" selection-start-line="60" selection-start-column="28" selection-end-line="60" selection-end-column="28" />
+        <state relative-caret-position="273">
+          <caret line="52" column="43" lean-forward="true" selection-start-line="52" selection-start-column="43" selection-end-line="52" selection-end-column="43" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="26" column="23" lean-forward="false" selection-start-line="26" selection-start-column="23" selection-end-line="26" selection-end-column="23" />
+          <folding>
+            <element signature="e#132#326#0" expanded="false" />
+            <element signature="e#752#1978#0" expanded="false" />
+            <element signature="e#2021#2281#0" expanded="false" />
+            <element signature="e#2321#2735#0" expanded="false" />
+            <element signature="e#2778#3320#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/my_pets.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="35" column="55" lean-forward="false" selection-start-line="35" selection-start-column="55" selection-end-line="35" selection-end-column="55" />
+          <folding>
+            <element signature="e#1054#1084#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -64,7 +64,7 @@
                         {% for q in questions %}
                             <li>
                                 <article class="ml-questions-list-question">
-                                    <p><i class="fa fa-comment"></i> {{ q.question }}</p>
+                                    <p><i class="fa fa-comment"></i> {{ q.question }} - ({{ q.created_at }})</p>
                                 </article>
                                 <article class="ml-questions-list-answer">
                                     {% for a in q.get_answers %}
