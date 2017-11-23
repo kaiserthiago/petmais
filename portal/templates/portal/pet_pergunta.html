@@ -31,7 +31,8 @@
                             {% empty %}
                                 <li class="alert-warning">
                                     <article class="ml-questions-list-question">
-                                        <p><i class="fa fa-comment"></i><strong> Sem perguntas pendentes!</strong>
+                                        <p>
+                                            <i class="fa fa-comment"></i><strong> Sem perguntas pendentes!</strong>
                                         </p>
                                     </article>
                                 </li>
@@ -60,6 +61,14 @@
                                         {% for a in question.get_answers %}
                                             <p><i class="fa fa-comments"></i> {{ a.answer }}</p>
                                         {% endfor %}
+                                    </article>
+                                </li>
+                            {% empty %}
+                                <li class="alert-warning">
+                                    <article class="ml-questions-list-question">
+                                        <p>
+                                            <i class="fa fa-comment"></i><strong> Sem perguntas respondidas!</strong>
+                                        </p>
                                     </article>
                                 </li>
                             {% endfor %}
