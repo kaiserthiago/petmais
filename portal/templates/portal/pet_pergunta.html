@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}Perguntas do pet: {{ pet.nome }} - Pet+{% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'my_pets' %}">Meus Pets</a></li>
+        <li><a href="{% url 'pet_show' pet.slug %}">{{ pet.nome }}</a></li>
+        <li><a href="{% url 'pet_question' pet.slug %}">Perguntas</a></li>
+    </ul>
+
+    <!--PERGUNTAS PENDENTES-->
+    <div class="card">
+        <div class="container-fluid">
+            <h4><strong>Perguntas pendentes</strong></h4>
+            <section class="section-questions-pet">
+                <div class="container-fluid">
+                    <section class="section-questions-pet-content">
+                        <ul class="ml-questions-list">
+                            {% for question in pet.question_no_answer %}
+                                <li>
+                                    <article class="ml-questions-list-question">
+                                        <p><i class="fa fa-comment"></i> {{ question.question }}</p>
+                                    </article>
+                                    <article class="ml-questions-list-answer">
+                                        <a href="{% url 'pet_answer_question' pet.slug question.id %}"
+                                           title="Responder"><span
+                                                class="glyphicon glyphicon-pencil"></span> Responder</a>
+                                    </article>
+                                </li>
+                            {% empty %}
+                                <li class="alert-warning">
+                                    <article class="ml-questions-list-question">
+                                        <p><i class="fa fa-comment"></i><strong> Sem perguntas pendentes!</strong>
+                                        </p>
+                                    </article>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!--PERGUNTAS RESPONDIDAS-->
+    <div class="card">
+        <div class="container-fluid">
+            <h4><strong>Perguntas respondidas</strong></h4>
+            <section class="section-questions-pet">
+                <div class="container-fluid">
+                    <section class="section-questions-pet-content">
+                        <ul class="ml-questions-list">
+                            {% for question in pet.question_answer %}
+                                <li>
+                                    <article class="ml-questions-list-question">
+                                        <p><i class="fa fa-comment"></i> {{ question.question }}</p>
+                                    </article>
+                                    <article class="ml-questions-list-answer">
+                                        {% for a in question.get_answers %}
+                                            <p><i class="fa fa-comments"></i> {{ a.answer }}</p>
+                                        {% endfor %}
+                                    </article>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+{% endblock %}

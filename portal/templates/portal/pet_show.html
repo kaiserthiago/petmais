@@ -4,6 +4,10 @@
 {% block class_home %} class="active" {% endblock %}
 
 {% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Adote</a></li>
+        <li><a href="{% url 'pet_show' pet.slug %}">{{ pet.nome }}</a></li>
+    </ul>
     <div class="card">
         <div class="row">
             <div class="col-sm-2"><br>
@@ -35,5 +39,36 @@
                 <p><i class="fa fa-map-marker"></i> {{ pet.cidade }} - {{ pet.uf }}</p>
             </div>
         </div>
+    </div>
+
+    <!--PERGUNTAS-->
+    <div class="card">
+        <section class="section-questions-pet">
+            <div class="container-fluid">
+                <h4><strong>Perguntas</strong></h4>
+                <section class="section-questions-pet-content">
+                    <form class="questions-form" action="{% url 'pet_new_question' pet.slug %}" method="post">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button type="submit" class="btn btn-info">Perguntar</button>
+                    </form>
+
+                    <ul class="ml-questions-list">
+                        {% for q in questions %}
+                            <li>
+                                <article class="ml-questions-list-question">
+                                    <p><i class="fa fa-comment"></i> {{ q.question }}</p>
+                                </article>
+                                <article class="ml-questions-list-answer">
+                                    {% for a in q.get_answers %}
+                                        <p><i class="fa fa-comments"></i> {{ a.answer }}</p>
+                                    {% endfor %}
+                                </article>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </section>
+            </div>
+        </section>
     </div>
 {% endblock %}

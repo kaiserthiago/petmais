@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Respondendo pergunta: {{ question.question }} - Pet+{% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'my_pets' %}">Meus Pets</a></li>
+        <li><a href="{% url 'pet_show' pet.slug %}">{{ pet.nome }}</a></li>
+        <li><a href="{% url 'pet_question' pet.slug %}">Perguntas</a></li>
+    </ul>
+
+    <h2 class="page-header">Respondendo perguntas: {{ pet.nome }}</h2>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            {{ question.question }}
+        </div>
+        <div class="panel-body">
+            <form class="questions-form" action="" method="post">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-info">Responder</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}

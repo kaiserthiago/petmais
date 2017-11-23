@@ -26,7 +26,6 @@ class Raca(models.Model):
     descricao = models.CharField(max_length=150)
     slug = models.SlugField(unique=True)
 
-
     class Meta:
         verbose_name_plural = 'Raças'
 
@@ -101,6 +100,14 @@ class Pet(models.Model):
     cidade = models.CharField(max_length=150)
     contato = models.CharField(max_length=255, blank=True, null=True)
 
+    @property
+    def question_no_answer(self):
+        return self.petquestion_set.filter(petanswer__isnull=True)
+
+    @property
+    def question_answer(self):
+        return self.petquestion_set.filter(petanswer__isnull=False)
+
     class Meta:
         verbose_name_plural = 'Pets'
 
@@ -113,6 +120,34 @@ class Pet(models.Model):
             super(Pet, self).save()
             self.slug = '%s-%i' % (slugify(self.nome), self.id)
         super(Pet, self).save(*args, **kwargs)
+
+
+class PetQuestion(models.Model):
+    user = models.ForeignKey(User)
+    pet = models.ForeignKey('Pet')
+    question = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'Perguntas'
+
+    @property
+    def get_answers(self):
+        return self.petanswer_set.all()
+
+    def __str__(self):
+        return self.question
+
+
+class PetAnswer(models.Model):
+    user = models.ForeignKey(User)
+    pet_question = models.ForeignKey(PetQuestion)
+    answer = models.TextField()
+
+    class Meta:
+        verbose_name_plural = 'Respostas'
+
+    def __str__(self):
+        return self.answer
 
 
 class UserProfile(models.Model):
@@ -151,7 +186,6 @@ class UserProfile(models.Model):
         ('TO', 'TO')
     )
     estado = models.CharField(max_length=20, choices=uf_escolhas, default='RO')
-
 
 
 class Contato(models.Model):

@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 
-from portal.forms import PetForm, ContatoForm, EspecieForm, RacaForm
-from portal.models import Pet, Contato, Especie, Raca
+from portal.forms import PetForm, ContatoForm, EspecieForm, RacaForm, PetQuestionForm, AnswerQuestionForm
+from portal.models import Pet, Contato, Especie, Raca, PetQuestion, PetAnswer
 
 
 def home(request):
@@ -119,14 +119,21 @@ def my_pets(request):
 
     return render(request, 'portal/my_pets.html', context)
 
+
 def pet_show(request, slug):
     pet = get_object_or_404(Pet, slug=slug)
+    questions = PetQuestion.objects.filter(pet=pet)
+
+    form = PetQuestionForm()
 
     context = {
+        'form': form,
         'pet': pet,
+        'questions': questions,
     }
 
     return render(request, 'portal/pet_show.html', context)
+
 
 @login_required
 def pet_new(request):
@@ -193,3 +200,59 @@ def pet_edit(request, slug):
     }
 
     return render(request, 'portal/pet_edit.html', context)
+
+
+@login_required
+def pet_new_question(request, slug):
+    pet = get_object_or_404(Pet, slug=slug)
+
+    if request.method == 'POST':
+        form = PetQuestionForm(request.POST)
+        if form.is_valid():
+            question = PetQuestion()
+
+            question.user = request.user
+            question.pet = pet
+            question.question = form.cleaned_data['question']
+            question.save()
+
+    return redirect('pet_show', slug)
+
+
+@login_required
+def pet_question(request, slug):
+    pet = get_object_or_404(Pet, slug=slug)
+
+    context = {
+        'pet': pet
+    }
+
+    return render(request, 'portal/pet_pergunta.html', context)
+
+
+@login_required
+def pet_answer_question(request, slug, question_id):
+    pet = get_object_or_404(Pet, slug=slug)
+    question = get_object_or_404(PetQuestion, pk=question_id)
+
+    form = AnswerQuestionForm()
+
+    if request.method == 'POST':
+        form = AnswerQuestionForm(request.POST)
+        if form.is_valid():
+            pet_answer = PetAnswer()
+
+            pet_answer.user = request.user
+            pet_answer.answer = form.cleaned_data['answer']
+            pet_answer.pet_question = question
+            pet_answer.save()
+
+            return redirect('pet_question', pet.slug)
+
+    context = {
+        'form': form,
+        'pet': pet,
+        'question': question
+    }
+
+    return render(request, 'portal/pet_resposta_pergunta.html', context)

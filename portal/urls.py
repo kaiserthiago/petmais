@@ -12,6 +12,10 @@ urlpatterns = [
     url(r'^pet_edit/(?P<slug>[-\w\d]+)$', views.pet_edit, name='pet_edit'),
     url(r'^pet_new$', views.pet_new, name='pet_new'),
 
+    url(r'^pet/(?P<slug>[-\w\d]+)/perguntas/(?P<question_id>[\d]+)$', views.pet_answer_question, name='pet_answer_question'),
+    url(r'^pet/nova/pergunta/(?P<slug>[-\w\d]+)$', views.pet_new_question, name='pet_new_question'),
+    url(r'^pet/(?P<slug>[-\w\d]+)/perguntas$', views.pet_question, name='pet_question'),
+
     url(r'^especies$', views.especies, name='especies'),
     url(r'^especie_edit/(?P<slug>[-\w\d]+)$', views.especie_new, name='especie_edit'),
     url(r'^especie_new$', views.especie_new, name='especie_new'),

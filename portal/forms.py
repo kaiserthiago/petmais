@@ -1,6 +1,31 @@
 from django import forms
 
-from portal.models import Raca, Especie, Pet, Contato
+from portal.models import Raca, Especie, Pet, Contato, PetAnswer
+
+
+class PetQuestionForm(forms.Form):
+    question = forms.CharField(
+        label='Perguntar',
+        widget=forms.Textarea(attrs={'class': 'form-control', 'id': 'question', 'placeholder': 'Faça sua pergunta...'}),
+        required=True
+    )
+
+
+class AnswerQuestionForm(forms.ModelForm):
+    class Meta:
+        model = PetAnswer
+        exclude = ('user', 'pet_question')
+
+        widgets = {
+            'answer': forms.Textarea(attrs={
+                'class': 'form-control',
+                'id': 'answer',
+                'placeholder': 'Responda aqui...'}),
+        }
+
+        labels = {
+            'answer': 'Resposta'
+        }
 
 
 class PetForm(forms.ModelForm):
@@ -75,7 +100,8 @@ class ContatoForm(forms.ModelForm):
         widgets = {
             'nome': forms.TextInput(attrs={'class': 'form-control', 'autofocus': 'autofcus'}),
             'email': forms.EmailInput(attrs={'class': 'form-control'}),
-            'comentario': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Deixe aqui sua sugestão, crítica ou elogio.'})
+            'comentario': forms.Textarea(
+                attrs={'class': 'form-control', 'placeholder': 'Deixe aqui sua sugestão, crítica ou elogio.'})
         }
 
         labels = {

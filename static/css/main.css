@@ -15,6 +15,34 @@
     margin-left: 15px;
 }
 
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: #eee;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 0.9em;
+    border-radius: 5px;
+}
+
+ul.breadcrumb li + li:before {
+    padding: 8px;
+    color: black;
+    content: ">";
+}
+
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
 body {
     margin: 0;
     font-family: "Lato", sans-serif;
@@ -66,6 +94,7 @@ body {
 
 body {
     font-family: "Lato", sans-serif;
+    transition: background-color .5s;
 }
 
 .sidenav {
@@ -109,7 +138,7 @@ body {
     }
 
     .sidenav a {
-        font-size: 18px;
+        font-size: 16px;
     }
 }
 
@@ -122,6 +151,12 @@ body {
 
 .modal-footer {
     background-color: #f9f9f9;
+}
+
+.container-login {
+    width: 28em;
+    min-width: 300px;
+    margin: 100px auto;
 }
 
 .container {
@@ -142,6 +177,115 @@ body {
 
 .section-content {
     height: 100%;
+}
+
+.section-questions-pet {
+    margin: 0px 0;
+}
+
+.section-questions-pet h2 {
+    margin: 40px;
+    font-size: 2.1em;
+    text-align: center;
+}
+
+.section-questions-pet .section-questions-pet-content {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.section-questions-pet .section-questions-pet-content ul {
+    list-style: none;
+}
+
+.section-questions-pet .section-questions-pet-content a {
+    font-size: 0.9em;
+    color: #0033bb;
+}
+
+.section-questions-pet .section-questions-pet-content a:hover {
+    font-size: 0.9em;
+    color: #0033bb;
+    text-decoration: underline;
+}
+
+.section-questions-pet .questions-form {
+    background-color: #dcf1fa;
+    padding: 10px 10px 10px 30px;
+    margin-bottom: 0;
+    position: relative;
+    font-size: 13px;
+    min-height: 54px;
+}
+
+.section-questions-pet .questions-form:before {
+    content: "\f075";
+    color: #79a9f5;
+    display: inline-block;
+    font-family: FontAwesome;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    left: 7px;
+    position: absolute;
+    text-decoration: none;
+    top: 22px;
+}
+
+.section-questions-pet .questions-form textarea {
+    font-size: 0.9em;
+    margin-bottom: 10px
+}
+
+.section-questions-pet .question-shipping-link {
+    color: gray;
+    position: relative;
+    top: -33px;
+    left: 180px;
+    font-size: 0.9em;
+}
+
+.section-questions-pet .question-shipping-link a {
+    font-size: 1em;
+    color: #808080;
+    text-decoration: underline;
+}
+
+.section-questions-pet .question-shipping-link a:hover {
+    font-size: 1em;
+    color: #808080;
+    text-decoration: underline;
+}
+
+.section-questions-pet .ml-questions-list {
+    padding-left: 0;
+}
+
+.section-questions-pet .ml-questions-list li {
+    border-bottom: 1px solid #ddd;
+}
+
+.section-questions-pet .ml-questions-list .ml-questions-list-question {
+    padding: 15px 0 0 0;
+}
+
+.section-questions-pet .ml-questions-list .ml-questions-list-question i {
+    color: #79a9f5;
+}
+
+.section-questions-pet .ml-questions-list .ml-questions-list-answer {
+    padding: 0 0 5px 0;
+    margin-left: 20px;
+}
+
+.section-questions-pet .ml-questions-list .ml-questions-list-answer i {
+    color: #9cd1f3;
+}
+
+.section-questions-pet .ml-questions-list .ml-questions-list-answer span {
+    font-size: 0.8em;
+    color: #999;
 }
 
 .footer-pet {
