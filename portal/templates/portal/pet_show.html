@@ -47,12 +47,19 @@
             <div class="container-fluid">
                 <h4><strong>Perguntas</strong></h4>
                 <section class="section-questions-pet-content">
-                    <form class="questions-form" action="{% url 'pet_new_question' pet.slug %}" method="post">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-info">Perguntar</button>
-                    </form>
-
+                    {% if request.user.is_authenticated %}
+                        <form class="questions-form" action="{% url 'pet_new_question' pet.slug %}" method="post">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-info">Perguntar</button>
+                        </form>
+                    {% else %}
+                        <p class="alert alert-warning text-center">
+                            Faça o <a
+                                href="{% url 'login' %}">login</a> para perguntar. Ainda não é cadastrado? <a
+                                href="{% url 'login_register' %}"> Cadastre-se aqui!</a>
+                        </p>
+                    {% endif %}
                     <ul class="ml-questions-list">
                         {% for q in questions %}
                             <li>
