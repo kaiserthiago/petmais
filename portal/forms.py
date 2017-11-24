@@ -98,16 +98,16 @@ class ContatoForm(forms.ModelForm):
         exclude = ('user',)
 
         widgets = {
-            'nome': forms.TextInput(attrs={'class': 'form-control', 'autofocus': 'autofcus'}),
-            'email': forms.EmailInput(attrs={'class': 'form-control'}),
+            'nome': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nome', 'autofocus': 'autofcus'}),
+            'email': forms.EmailInput(attrs={'class': 'form-control', 'placeholder': 'E-mail'}),
             'comentario': forms.Textarea(
                 attrs={'class': 'form-control', 'placeholder': 'Deixe aqui sua sugestão, crítica ou elogio.'})
         }
 
         labels = {
-            'nome': 'Nome',
-            'email': 'E-mail',
-            'comentario': 'Comentário'
+            'nome': '',
+            'email': '',
+            'comentario': ''
         }
 
 
