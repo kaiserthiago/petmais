@@ -74,7 +74,7 @@ def especies(request):
     return render(request, 'portal/especies.html', context)
 
 
-@login_required
+@staff_member_required
 def especie_new(request):
     if request.method == 'POST':
         form = EspecieForm(request.POST)
@@ -94,6 +94,28 @@ def especie_new(request):
     }
 
     return render(request, 'portal/especie_new.html', context)
+
+
+@staff_member_required
+def especie_edit(request, slug):
+    especie = get_object_or_404(Especie, slug=slug)
+
+    if request.method == 'POST':
+        form = EspecieForm(request.POST)
+        if form.is_valid():
+            especie.descricao = form.cleaned_data['descricao']
+
+            especie.save()
+            return redirect('especies')
+
+    form = EspecieForm(instance=especie)
+
+    context = {
+        'form': form,
+        'especie': especie,
+    }
+
+    return render(request, 'portal/especie_edit.html', context)
 
 
 @staff_member_required
@@ -128,6 +150,29 @@ def raca_new(request):
     }
 
     return render(request, 'portal/raca_new.html', context)
+
+
+@staff_member_required
+def raca_edit(request, slug):
+    raca = get_object_or_404(Raca, slug=slug)
+
+    if request.method == 'POST':
+        form = RacaForm(request.POST)
+        if form.is_valid():
+            raca.especie = form.cleaned_data['especie']
+            raca.descricao = form.cleaned_data['descricao']
+
+            raca.save()
+            return redirect('racas')
+
+    form = RacaForm(instance=raca)
+
+    context = {
+        'form': form,
+        'raca': raca,
+    }
+
+    return render(request, 'portal/raca_edit.html', context)
 
 
 @login_required

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Editando espécie - Pet+{% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'especies' %}">Espécies</a></li>
+        <li>Editando: {{ especie.descricao }}</li>
+    </ul>
+    <h3 class="page-header">Editando: {{ especie.descricao }}</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-success">Atualizar</button>
+    </form>
+{% endblock %}

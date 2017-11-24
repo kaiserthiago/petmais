@@ -7,7 +7,7 @@
         <li><a href="{% url 'home' %}">Início</a></li>
         <li><a href="{% url 'minha_conta' %}">Minha conta</a></li>
         <li><a href="{% url 'my_pets' %}">Meus Pets</a></li>
-        <li>{{ pet.nome }}</li>
+        <li>Editando: {{ pet.nome }}</li>
     </ul>
     <h3 class="page-header">Editando: {{ pet.nome }}</h3>
     <form action="" method="post" enctype="multipart/form-data">

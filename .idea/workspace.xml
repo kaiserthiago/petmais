@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="073bd1ba-1d02-4e43-8d90-ea42f70b49e5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/templates/portal/dashboard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/templates/portal/especie_edit.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/portal/templates/portal/raca_edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/base.html" afterPath="$PROJECT_DIR$/portal/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/especie_new.html" afterPath="$PROJECT_DIR$/portal/templates/portal/especie_new.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/especies.html" afterPath="$PROJECT_DIR$/portal/templates/portal/especies.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/raca_new.html" afterPath="$PROJECT_DIR$/portal/templates/portal/raca_new.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/pet_edit.html" afterPath="$PROJECT_DIR$/portal/templates/portal/pet_edit.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/racas.html" afterPath="$PROJECT_DIR$/portal/templates/portal/racas.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/urls.py" afterPath="$PROJECT_DIR$/portal/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/views.py" afterPath="$PROJECT_DIR$/portal/views.py" />
@@ -24,21 +23,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="especies.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portal/templates/portal/especies.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="150">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -47,38 +36,28 @@
       <file leaf-file-name="racas.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portal/templates/portal/racas.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="375">
+              <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="raca_new.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/templates/portal/raca_new.html">
+      <file leaf-file-name="especie_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/templates/portal/especie_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+            <state relative-caret-position="275">
+              <caret line="11" column="58" lean-forward="false" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/urls.py">
+      <file leaf-file-name="raca_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/templates/portal/raca_edit.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dashboard.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/portal/templates/portal/dashboard.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="675">
-              <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+            <state relative-caret-position="275">
+              <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
               <folding />
             </state>
           </provider>
@@ -87,61 +66,101 @@
       <file leaf-file-name="especie_new.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portal/templates/portal/especie_new.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="600">
+              <caret line="202" column="30" lean-forward="false" selection-start-line="202" selection-start-column="30" selection-end-line="202" selection-end-column="30" />
+              <folding>
+                <element signature="e#159#606#0" expanded="false" />
+                <element signature="e#639#1118#0" expanded="false" />
+                <element signature="e#1150#3568#0" expanded="false" />
+                <element signature="e#3608#3958#0" expanded="false" />
+                <element signature="e#3996#4218#0" expanded="false" />
+                <element signature="e#4258#5310#0" expanded="false" />
+                <element signature="e#5346#5631#0" expanded="false" />
+                <element signature="e#5669#6587#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pet_edit.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_edit.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portal/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="398">
-              <caret line="62" column="49" lean-forward="false" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
+            <state relative-caret-position="435">
+              <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
               <folding>
                 <element signature="e#0#71#0" expanded="true" />
                 <element signature="e#612#759#0" expanded="false" />
                 <element signature="e#788#1289#0" expanded="false" />
                 <element signature="e#1316#1363#0" expanded="false" />
                 <element signature="e#1412#1576#0" expanded="false" />
+                <element signature="e#1630#1793#0" expanded="false" />
                 <element signature="e#1846#2013#0" expanded="false" />
-                <element signature="e#2062#2462#0" expanded="false" />
-                <element signature="e#2512#2665#0" expanded="false" />
-                <element signature="e#2718#3147#0" expanded="false" />
-                <element signature="e#3192#3547#0" expanded="false" />
-                <element signature="e#3601#3715#0" expanded="false" />
-                <element signature="e#3751#4054#0" expanded="false" />
-                <element signature="e#4099#6864#0" expanded="false" />
-                <element signature="e#6916#7881#0" expanded="false" />
-                <element signature="e#7941#8326#0" expanded="false" />
-                <element signature="e#8382#8528#0" expanded="false" />
-                <element signature="e#8604#9289#0" expanded="false" />
-                <element signature="e#9337#9714#0" expanded="false" />
-                <element signature="e#9765#11704#0" expanded="false" />
-                <element signature="e#11759#11818#0" expanded="false" />
-                <element signature="e#11886#12032#0" expanded="false" />
+                <element signature="e#2069#2469#0" expanded="false" />
+                <element signature="e#2532#2993#0" expanded="false" />
+                <element signature="e#3043#3196#0" expanded="false" />
+                <element signature="e#3249#3678#0" expanded="false" />
+                <element signature="e#3738#4222#0" expanded="false" />
+                <element signature="e#4267#4622#0" expanded="false" />
+                <element signature="e#4676#4790#0" expanded="false" />
+                <element signature="e#4826#5129#0" expanded="false" />
+                <element signature="e#5174#7939#0" expanded="false" />
+                <element signature="e#7991#8956#0" expanded="false" />
+                <element signature="e#9016#9401#0" expanded="false" />
+                <element signature="e#9457#9603#0" expanded="false" />
+                <element signature="e#9679#10364#0" expanded="false" />
+                <element signature="e#10412#10789#0" expanded="false" />
+                <element signature="e#10840#12779#0" expanded="false" />
+                <element signature="e#12834#12893#0" expanded="false" />
+                <element signature="e#12961#13107#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_account.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/templates/portal/my_account.html">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="30" selection-end-column="56" />
+            <state relative-caret-position="625">
+              <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pet_show.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_show.html">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/portal/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="500">
-              <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
-              <folding />
+            <state relative-caret-position="300">
+              <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+              <folding>
+                <element signature="e#143#337#0" expanded="false" />
+                <element signature="e#387#724#0" expanded="false" />
+                <element signature="e#763#1989#0" expanded="false" />
+                <element signature="e#2032#2292#0" expanded="false" />
+                <element signature="e#2332#2746#0" expanded="false" />
+                <element signature="e#2789#3359#0" expanded="false" />
+                <element signature="e#3404#3962#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -214,7 +233,6 @@
         <option value="$PROJECT_DIR$/portal/templates/portal/interesse_adocao.html" />
         <option value="$PROJECT_DIR$/portal/admin.py" />
         <option value="$PROJECT_DIR$/petmais/settings.py" />
-        <option value="$PROJECT_DIR$/portal/templates/portal/pet_edit.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/interesse.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/interesse_new.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/interesse_success.html" />
@@ -224,14 +242,17 @@
         <option value="$PROJECT_DIR$/portal/templates/portal/my_pets.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/my_account.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/pet_show.html" />
-        <option value="$PROJECT_DIR$/portal/urls.py" />
-        <option value="$PROJECT_DIR$/portal/views.py" />
         <option value="$PROJECT_DIR$/portal/templates/base.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/especie_new.html" />
-        <option value="$PROJECT_DIR$/portal/templates/portal/especies.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/raca_new.html" />
-        <option value="$PROJECT_DIR$/portal/templates/portal/racas.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/dashboard.html" />
+        <option value="$PROJECT_DIR$/portal/templates/portal/pet_edit.html" />
+        <option value="$PROJECT_DIR$/portal/templates/portal/raca_edit.html" />
+        <option value="$PROJECT_DIR$/portal/templates/portal/especie_edit.html" />
+        <option value="$PROJECT_DIR$/portal/urls.py" />
+        <option value="$PROJECT_DIR$/portal/templates/portal/especies.html" />
+        <option value="$PROJECT_DIR$/portal/templates/portal/racas.html" />
+        <option value="$PROJECT_DIR$/portal/views.py" />
       </list>
     </option>
   </component>
@@ -418,21 +439,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/login/templates/registration/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1600">
-          <caret line="64" column="75" lean-forward="false" selection-start-line="64" selection-start-column="75" selection-end-line="64" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/login/templates/registration/register.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
@@ -602,21 +608,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="103" column="103" lean-forward="false" selection-start-line="103" selection-start-column="103" selection-end-line="103" selection-end-column="103" />
-          <folding>
-            <element signature="e#143#337#0" expanded="false" />
-            <element signature="e#387#724#0" expanded="false" />
-            <element signature="e#763#1989#0" expanded="false" />
-            <element signature="e#2032#2292#0" expanded="false" />
-            <element signature="e#2332#2746#0" expanded="false" />
-            <element signature="e#3404#3962#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -640,22 +631,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2200">
-          <caret line="202" column="30" lean-forward="false" selection-start-line="202" selection-start-column="30" selection-end-line="202" selection-end-column="30" />
-          <folding>
-            <element signature="e#159#606#0" expanded="false" />
-            <element signature="e#639#1118#0" expanded="false" />
-            <element signature="e#3608#3958#0" expanded="false" />
-            <element signature="e#3996#4218#0" expanded="false" />
-            <element signature="e#4258#5310#0" expanded="false" />
-            <element signature="e#5346#5631#0" expanded="false" />
-            <element signature="e#5669#6587#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -707,14 +682,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_edit.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_pergunta.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="175">
@@ -750,46 +717,8 @@
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_show.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
-          <caret line="62" column="45" lean-forward="true" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
+          <caret line="62" column="45" lean-forward="false" selection-start-line="62" selection-start-column="45" selection-end-line="62" selection-end-column="45" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="14" column="56" lean-forward="false" selection-start-line="14" selection-start-column="56" selection-end-line="14" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="62" column="49" lean-forward="false" selection-start-line="62" selection-start-column="49" selection-end-line="62" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#71#0" expanded="true" />
-            <element signature="e#612#759#0" expanded="false" />
-            <element signature="e#788#1289#0" expanded="false" />
-            <element signature="e#1316#1363#0" expanded="false" />
-            <element signature="e#1412#1576#0" expanded="false" />
-            <element signature="e#1846#2013#0" expanded="false" />
-            <element signature="e#2062#2462#0" expanded="false" />
-            <element signature="e#2512#2665#0" expanded="false" />
-            <element signature="e#2718#3147#0" expanded="false" />
-            <element signature="e#3192#3547#0" expanded="false" />
-            <element signature="e#3601#3715#0" expanded="false" />
-            <element signature="e#3751#4054#0" expanded="false" />
-            <element signature="e#4099#6864#0" expanded="false" />
-            <element signature="e#6916#7881#0" expanded="false" />
-            <element signature="e#7941#8326#0" expanded="false" />
-            <element signature="e#8382#8528#0" expanded="false" />
-            <element signature="e#8604#9289#0" expanded="false" />
-            <element signature="e#9337#9714#0" expanded="false" />
-            <element signature="e#9765#11704#0" expanded="false" />
-            <element signature="e#11759#11818#0" expanded="false" />
-            <element signature="e#11886#12032#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -797,22 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="36" column="38" lean-forward="false" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/portal/especie_new.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/portal/especies.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
           <folding />
         </state>
       </provider>
@@ -825,18 +738,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/portal/racas.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/my_account.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="598">
-          <caret line="29" column="12" lean-forward="true" selection-start-line="29" selection-start-column="12" selection-end-line="30" selection-end-column="56" />
+          <caret line="29" column="12" lean-forward="false" selection-start-line="29" selection-start-column="12" selection-end-line="30" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -844,8 +749,130 @@
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
-          <caret line="27" column="14" lean-forward="true" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
+          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/pet_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="8" lean-forward="true" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/especie_new.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="202" column="30" lean-forward="false" selection-start-line="202" selection-start-column="30" selection-end-line="202" selection-end-column="30" />
+          <folding>
+            <element signature="e#159#606#0" expanded="false" />
+            <element signature="e#639#1118#0" expanded="false" />
+            <element signature="e#1150#3568#0" expanded="false" />
+            <element signature="e#3608#3958#0" expanded="false" />
+            <element signature="e#3996#4218#0" expanded="false" />
+            <element signature="e#4258#5310#0" expanded="false" />
+            <element signature="e#5346#5631#0" expanded="false" />
+            <element signature="e#5669#6587#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/especie_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="58" lean-forward="false" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/raca_edit.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="625">
+          <caret line="33" column="29" lean-forward="true" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="63" column="0" lean-forward="false" selection-start-line="63" selection-start-column="0" selection-end-line="63" selection-end-column="0" />
+          <folding>
+            <element signature="e#143#337#0" expanded="false" />
+            <element signature="e#387#724#0" expanded="false" />
+            <element signature="e#763#1989#0" expanded="false" />
+            <element signature="e#2032#2292#0" expanded="false" />
+            <element signature="e#2332#2746#0" expanded="false" />
+            <element signature="e#2789#3359#0" expanded="false" />
+            <element signature="e#3404#3962#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/especies.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/portal/racas.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="121" column="19" lean-forward="false" selection-start-line="121" selection-start-column="19" selection-end-line="121" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#71#0" expanded="true" />
+            <element signature="e#612#759#0" expanded="false" />
+            <element signature="e#788#1289#0" expanded="false" />
+            <element signature="e#1316#1363#0" expanded="false" />
+            <element signature="e#1412#1576#0" expanded="false" />
+            <element signature="e#1630#1793#0" expanded="false" />
+            <element signature="e#1846#2013#0" expanded="false" />
+            <element signature="e#2069#2469#0" expanded="false" />
+            <element signature="e#2532#2993#0" expanded="false" />
+            <element signature="e#3043#3196#0" expanded="false" />
+            <element signature="e#3249#3678#0" expanded="false" />
+            <element signature="e#3738#4222#0" expanded="false" />
+            <element signature="e#4267#4622#0" expanded="false" />
+            <element signature="e#4676#4790#0" expanded="false" />
+            <element signature="e#4826#5129#0" expanded="false" />
+            <element signature="e#5174#7939#0" expanded="false" />
+            <element signature="e#7991#8956#0" expanded="false" />
+            <element signature="e#9016#9401#0" expanded="false" />
+            <element signature="e#9457#9603#0" expanded="false" />
+            <element signature="e#9679#10364#0" expanded="false" />
+            <element signature="e#10412#10789#0" expanded="false" />
+            <element signature="e#10840#12779#0" expanded="false" />
+            <element signature="e#12834#12893#0" expanded="false" />
+            <element signature="e#12961#13107#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
