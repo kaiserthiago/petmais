@@ -306,8 +306,8 @@ def interesse_new(request):
             subject, from_email, to = 'Cadastro de interesse - Pet+', 'thiagokaisi@gmail.com', request.user.email
             text_content = 'Olá, ' + request.user.first_name + '. Obrigado pelo seu interesse em adotar um Pet! Entraremos em contato quando encontrarmos seu novo Pet. Atenciosamente, Pet+ Seu portal de adoção de Pets.'
             html_content = '<p>Olá, ' + request.user.first_name + '.</p>' \
-                                                                  '<p>Obrigado pelo seu interesse em adotar um Pet!</p>' \
-                                                                  '<p>Entraremos em contato quando encontrarmos seu novo Pet.</p><br>' \
+                                                                  'Obrigado pelo seu interesse em adotar um Pet!<br>' \
+                                                                  'Entraremos em contato quando encontrarmos seu novo Pet.<br><br>' \
                                                                   '<p>Atenciosamente,</p>' \
                                                                   '<strong>Pet+</strong><br>' \
                                                                   '<em>Seu portal de adoção de Pets.</em><br><br>' \
