@@ -43,6 +43,13 @@ def contato(request):
 def sobre(request):
     return render(request, 'portal/sobre.html', {})
 
+def minha_conta(request):
+    usuario = get_object_or_404(User, pk=request.user.id)
+    context = {
+        'usuario': usuario
+    }
+    return render(request, 'portal/my_account.html', context)
+
 
 @login_required
 def especie_new(request):
@@ -113,13 +120,25 @@ def especies(request):
 
 @login_required
 def my_pets(request):
-    pets = Pet.objects.filter(user=request.user)
+    pets_disponiveis = Pet.objects.filter(user=request.user, status='Disponível').order_by('nome')
+    pets_adotados = Pet.objects.filter(user=request.user, status='Adotado').order_by('nome')
 
     context = {
-        'pets': pets
+        'pets_disponiveis': pets_disponiveis,
+        'pets_adotados': pets_adotados
     }
 
     return render(request, 'portal/my_pets.html', context)
+
+
+@login_required
+def pet_adocao(request, slug):
+    pet = get_object_or_404(Pet, slug=slug)
+
+    pet.status = 'Adotado'
+    pet.save()
+
+    return redirect('my_pets')
 
 
 def pet_show(request, slug):
@@ -164,17 +183,19 @@ def pet_new(request):
 
             for item in lista:
                 if (pet.especie == item.especie) and (pet.raca == item.raca):
-                    subject, from_email, to = 'Pet Disponível - Pet+', 'thiagokaisi@gmail.com', item.user.email
-                    text_content = 'This is an important message.'
-                    html_content = '<p>This is an <strong>important</strong> message.</p>'
+                    link = '127.0.0.1:8000/pet/show/'
+                    subject, from_email, to = 'Pet disponível - Pet+', 'thiagokaisi@gmail.com', item.user.email
+                    text_content = 'Olá, ' + item.user.first_name + '. É com grande satisfação que informamos que temos um pet disponível para adoção.'
+                    html_content = '<p>Olá, ' + item.user.first_name + '.</p>' \
+                                                                       'Temos uma ótima notícia, temos um Pet exatamente como você queria!<br>' \
+                                                                       '<a href="' + link + pet.slug + '"> Oi, me chamo ' + pet.nome + '</a>, leve-me para casa com você!<br><br>' \
+                                                                                                                                       '<p>Atenciosamente,</p>' \
+                                                                                                                                       '<strong>Pet+</strong><br>' \
+                                                                                                                                       '<em>Seu portal de adoção de Pets.</em><br><br>' \
+                                                                                                                                       '<p style="color: red"><strong>Essa é uma mensagem automática, não é necessário respondê-la.</strong></p>'
                     msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
                     msg.attach_alternative(html_content, "text/html")
                     msg.send()
-
-
-                    # send_mail("Pet Disponível - Pet+",
-                    #           msg+"Esta é uma mensagem automática, não é necessário respondê-la",
-                    #           "thiagokaisi@gmail.com", [item.user.email], fail_silently=False)
 
             return redirect('my_pets')
 
@@ -278,10 +299,12 @@ def pet_answer_question(request, slug, question_id):
 
 @login_required
 def interesses(request):
-    interesses = Interesse.objects.filter(status='Solicitado')
+    interesses_solicitados = Interesse.objects.filter(status='Solicitado', user=request.user.id)
+    interesses_adotados = Interesse.objects.filter(status='Adotado', user=request.user.id)
 
     context = {
-        'interesses': interesses
+        'interesses_solicitados': interesses_solicitados,
+        'interesses_adotados': interesses_adotados
     }
 
     return render(request, 'portal/interesse.html', context)
@@ -328,3 +351,13 @@ def interesse_new(request):
 @login_required
 def interesse_sucesso(request):
     return render(request, 'portal/interesse_success.html', {})
+
+
+@login_required
+def interesse_adocao(request, interesse_id):
+    interesse = get_object_or_404(Interesse, pk=interesse_id)
+
+    interesse.status = 'Adotado'
+    interesse.save()
+
+    return redirect('interesse')

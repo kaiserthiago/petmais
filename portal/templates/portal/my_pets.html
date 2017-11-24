@@ -6,33 +6,30 @@
 {% block content %}
     <ul class="breadcrumb">
         <li><a href="{% url 'home' %}">Início</a></li>
+        <li><a href="{% url 'minha_conta' %}">Minha conta</a></li>
         <li>Meus Pets</li>
     </ul>
 
-    <h2 class="page-header">Meus pets</h2>
     <p><a href="{% url 'pet_new' %}" class="btn btn-primary">
         <span class="fa fa-plus-circle"></span>
         Novo pet</a>
     </p>
+    <h2 class="page-header">Pets para adoção</h2>
     <table class="table table-striped">
         <thead>
-        <th>#</th>
         <th>Nome</th>
         <th>Espécie</th>
         <th>Raça</th>
-        <th>Status</th>
         <th>Ações</th>
         </thead>
         <tbody>
-        {% for pet in pets %}
+        {% for pet in pets_disponiveis %}
             <tr>
-                <td style="vertical-align: middle">{{ pet.id }}</td>
                 <td style="vertical-align: middle">{{ pet.nome }}</td>
                 <td style="vertical-align: middle">{{ pet.especie }}</td>
                 <td style="vertical-align: middle">{{ pet.raca }}</td>
-                <td style="vertical-align: middle">{{ pet.status }}</td>
                 <td style="vertical-align: middle">
-                    <a href="#" class="btn btn-success" title="Adotar"><span
+                    <a href="{% url 'pet_adocao' pet.slug %}" class="btn btn-success" title="Adotar"><span
                             class="fa fa-check-square-o"></span></a>
                     <a href="{% url 'pet_edit' pet.slug %}" class="btn btn-warning" title="Editar"><span
                             class="fa fa-pencil"></span></a>
@@ -50,8 +47,45 @@
             </tr>
         {% empty %}
             <tr>
-                <td colspan="6" class="text-center alert-warning">
-                    Nenhum pet cadastrado
+                <td colspan="4" class="text-center alert-warning">
+                    Nenhum Pet para adoção.
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="page-header">Pets adotados</h2>
+    <table class="table table-striped">
+        <thead>
+        <th>Nome</th>
+        <th>Espécie</th>
+        <th>Raça</th>
+        <th>Ações</th>
+        </thead>
+        <tbody>
+        {% for pet in pets_adotados %}
+            <tr>
+                <td style="vertical-align: middle">{{ pet.nome }}</td>
+                <td style="vertical-align: middle">{{ pet.especie }}</td>
+                <td style="vertical-align: middle">{{ pet.raca }}</td>
+                <td style="vertical-align: middle">
+                    <a href="{% url 'pet_show' pet.slug %}" class="btn btn-primary"
+                       title="Visualizar"><span
+                            class="fa fa-search"></span></a>
+                    <a href="{% url 'pet_question' pet.slug %}" class="btn btn-danger"
+                       title="Perguntas"><span
+                            class="fa fa-question-circle"></span>
+                        {% if pet.question_no_answer.count >= 1 %}
+                            ({{ pet.question_no_answer.count }})
+                        {% endif %}
+                    </a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4" class="text-center alert-warning">
+                    Nenhum Pet adotado.
                 </td>
             </tr>
         {% endfor %}

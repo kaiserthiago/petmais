@@ -31,20 +31,13 @@
     <a href="{% url 'home' %}"><i class="fa fa-home"></i> Início</a>
     <a href="{% url 'contato' %}"><i class="fa fa-envelope"></i> Contato</a>
     <a href="{% url 'sobre' %}"><i class="fa fa-question-circle"></i> Sobre</a>
-    <a href="{% url 'interesse_new' %}"><i class="fa fa-paw"></i> Quero adotar</a>
-    <hr>
     {% if request.user.is_authenticated %}
-        <a href="{% url 'my_pets' %}"><i class="fa fa-paw"></i> Meus pets</a>
-        <a href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo pet</a>
-{#        <a href="#"><i class="fa fa-user-circle"></i> Minha conta</a>#}
-{#        <a href="#"><i class="fa fa-question-circle"></i> Minhas perguntas</a>#}
-{#        <a href="#"><i class="fa fa-paw"></i> Minhas solicitações</a>#}
+        <a href="{% url 'minha_conta' %}"><i class="fa fa-user-circle"></i> Minha conta</a>
         <hr>
         {% if request.user.is_staff %}
             <a href="#">ÁREA ADMINISTRATIVA</a>
             <a href="{% url 'especies' %}"><i class="fa fa-paw"></i> Espécies</a>
             <a href="{% url 'racas' %}"><i class="fa fa-github-alt"></i> Raças</a>
-            <a href="{% url 'interesse' %}"><i class="fa fa-paw"></i> Interesse em adotar</a>
             <hr>
         {% endif %}
         <a data-toggle="modal" href="#modal-logout"><i class="fa fa-power-off"></i> Sair</a>

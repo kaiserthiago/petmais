@@ -25,8 +25,8 @@ class EspecieAdmin(admin.ModelAdmin):
 
 
 class PetAdmin(admin.ModelAdmin):
-    list_display = ('id', 'nome', 'especie', 'raca', 'idade', 'genero', 'cidade', 'uf')
-    list_filter = ['raca', 'idade', 'genero', 'cidade', 'uf']
+    list_display = ('id', 'nome', 'especie', 'raca', 'idade', 'genero', 'cidade', 'uf', 'status')
+    list_filter = ['raca', 'idade', 'genero', 'cidade', 'uf', 'status']
 
 
 class ContatoAdmin(admin.ModelAdmin):
@@ -45,8 +45,8 @@ class PetQuestionAdmin(admin.ModelAdmin):
     inlines = (PetAnswerInline,)
 
 class InteresseAdmin(admin.ModelAdmin):
-    list_display = ('id', 'especie', 'raca', 'genero', 'idade')
-    list_filter = ['especie', 'raca', 'genero', 'idade']
+    list_display = ('id', 'especie', 'raca', 'genero', 'idade', 'status')
+    list_filter = ['especie', 'raca', 'genero', 'idade', 'status']
 
 
 admin.site.unregister(User)

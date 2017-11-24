@@ -6,11 +6,16 @@ urlpatterns = [
     url(r'^$', views.home, name='home'),
     url(r'^sobre$', views.sobre, name='sobre'),
     url(r'^contato$', views.contato, name='contato'),
-    url(r'^interesse/sucesso', views.interesse_sucesso, name='interesse_sucesso'),
-    url(r'^interesse/new', views.interesse_new, name='interesse_new'),
-    url(r'^interesse', views.interesses, name='interesse'),
+
+    url(r'^interesse/(?P<interesse_id>\d+)/adocao$', views.interesse_adocao, name='interesse_adocao'),
+    url(r'^interesse/sucesso$', views.interesse_sucesso, name='interesse_sucesso'),
+    url(r'^interesse/new$', views.interesse_new, name='interesse_new'),
+    url(r'^interesse$', views.interesses, name='interesse'),
+
+    url(r'^conta$', views.minha_conta, name='minha_conta'),
 
     url(r'^my_pets$', views.my_pets, name='my_pets'),
+    url(r'^pet/adocao/(?P<slug>[-\w\d]+)$', views.pet_adocao, name='pet_adocao'),
     url(r'^pet/show/(?P<slug>[-\w\d]+)$', views.pet_show, name='pet_show'),
     url(r'^pet/edit/(?P<slug>[-\w\d]+)$', views.pet_edit, name='pet_edit'),
     url(r'^pet/new$', views.pet_new, name='pet_new'),

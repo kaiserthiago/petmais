@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Minha conta - Pet+{% endblock %}
+{% load static %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li>Minha conta</li>
+    </ul>
+
+    <h2 class="page-header">Olá, {{ usuario.first_name }}</h2>
+
+    <p>
+        <a href="#" class="btn btn-danger">
+            <span class="fa fa-question-circle"></span>
+            Minhas perguntas</a>
+
+        <a href="{% url 'my_pets' %}" class="btn btn-success">
+            <span class="fa fa-paw"></span>
+            Meus Pets</a>
+
+        <a href="{% url 'interesse' %}" class="btn btn-primary">
+            <span class="fa fa-plus-circle"></span>
+            Minhas solicitações</a>
+    </p>
+
+{% endblock %}

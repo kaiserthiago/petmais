@@ -125,7 +125,7 @@ MEDIA_ROOT = (
 
 MEDIA_URL = '/media/'  # endereço para acessar os arquivos
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/conta'
 
 LOGIN_URL = '/login'
 
