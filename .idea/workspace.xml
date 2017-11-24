@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="073bd1ba-1d02-4e43-8d90-ea42f70b49e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/forms.py" afterPath="$PROJECT_DIR$/portal/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/base.html" afterPath="$PROJECT_DIR$/portal/templates/base.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/especies.html" afterPath="$PROJECT_DIR$/portal/templates/portal/especies.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/interesse.html" afterPath="$PROJECT_DIR$/portal/templates/portal/interesse.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/my_pets.html" afterPath="$PROJECT_DIR$/portal/templates/portal/my_pets.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/pet_resposta_pergunta.html" afterPath="$PROJECT_DIR$/portal/templates/portal/pet_resposta_pergunta.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/racas.html" afterPath="$PROJECT_DIR$/portal/templates/portal/racas.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,8 +19,8 @@
       <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portal/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+            <state relative-caret-position="450">
+              <caret line="39" column="80" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="39" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -819,8 +813,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="33" column="34" lean-forward="false" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+        <state relative-caret-position="450">
+          <caret line="39" column="80" lean-forward="false" selection-start-line="38" selection-start-column="10" selection-end-line="39" selection-end-column="80" />
           <folding />
         </state>
       </provider>

@@ -36,8 +36,8 @@
     {% if request.user.is_authenticated %}
         <a href="{% url 'my_pets' %}"><i class="fa fa-paw"></i> Meus pets</a>
         <a href="{% url 'pet_new' %}"><i class="fa fa-plus-circle"></i> Novo pet</a>
-        <a href="#"><i class="fa fa-user-circle"></i> Minha conta</a>
-        <a href="#"><i class="fa fa-question-circle"></i> Minhas perguntas</a>
+{#        <a href="#"><i class="fa fa-user-circle"></i> Minha conta</a>#}
+{#        <a href="#"><i class="fa fa-question-circle"></i> Minhas perguntas</a>#}
         <hr>
         {% if request.user.is_staff %}
             <a href="#">ÁREA ADMINISTRATIVA</a>
