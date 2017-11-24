@@ -143,7 +143,7 @@ body {
 }
 
 .modal-header, .close {
-    background-color: #195128;
+    background-color: #4CAF50 !important;
     color: white !important;
     text-align: center;
     font-size: 30px;
@@ -288,18 +288,16 @@ body {
     color: #999;
 }
 
-.footer-pet {
-    background-color: #f7f7f7;
-    border-top: 1px solid #eee;
-    line-height: 1;
-    margin-top: 60px;
-    padding: 25px 0 15px 0;
-}
-
-.footer-pet p {
-    font-size: 0.9em;
-    color: #999;
+footer {
+    background-color: #555;
+    color: white;
+    /*padding: 5px;*/
+    font-size: 8pt;
+    font-weight: bold;
     text-align: center;
+    display: block;
+    margin-top: 50px;
+    padding: 15px;
 }
 
 h2 {
