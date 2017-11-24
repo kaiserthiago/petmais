@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
+from django.core.mail import EmailMultiAlternatives
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 
@@ -158,6 +160,22 @@ def pet_new(request):
 
             pet.save()
 
+            lista = Interesse.objects.filter(status='Solicitado')
+
+            for item in lista:
+                if (pet.especie == item.especie) and (pet.raca == item.raca):
+                    subject, from_email, to = 'Pet Disponível - Pet+', 'thiagokaisi@gmail.com', item.user.email
+                    text_content = 'This is an important message.'
+                    html_content = '<p>This is an <strong>important</strong> message.</p>'
+                    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+                    msg.attach_alternative(html_content, "text/html")
+                    msg.send()
+
+
+                    # send_mail("Pet Disponível - Pet+",
+                    #           msg+"Esta é uma mensagem automática, não é necessário respondê-la",
+                    #           "thiagokaisi@gmail.com", [item.user.email], fail_silently=False)
+
             return redirect('my_pets')
 
     form = PetForm()
@@ -285,6 +303,19 @@ def interesse_new(request):
 
             interesse.save()
 
+            subject, from_email, to = 'Cadastro de interesse - Pet+', 'thiagokaisi@gmail.com', request.user.email
+            text_content = 'Olá, ' + request.user.first_name + '. Obrigado pelo seu interesse em adotar um Pet! Entraremos em contato quando encontrarmos seu novo Pet. Atenciosamente, Pet+ Seu portal de adoção de Pets.'
+            html_content = '<p>Olá, ' + request.user.first_name + '.</p>' \
+                                                                  '<p>Obrigado pelo seu interesse em adotar um Pet!</p>' \
+                                                                  '<p>Entraremos em contato quando encontrarmos seu novo Pet.</p><br>' \
+                                                                  '<p>Atenciosamente,</p>' \
+                                                                  '<strong>Pet+</strong><br>' \
+                                                                  '<em>Seu portal de adoção de Pets.</em><br><br>' \
+                                                                  '<p style="color: red"><strong>Essa é uma mensagem automática, não é necessário respondê-la.</strong></p>'
+            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            msg.attach_alternative(html_content, "text/html")
+            msg.send()
+
             return redirect('interesse_sucesso')
 
     form = InteresseForm()
@@ -294,10 +325,6 @@ def interesse_new(request):
     return render(request, 'portal/interesse_new.html', context)
 
 
+@login_required
 def interesse_sucesso(request):
-    interesse = get_object_or_404(Interesse, user=request.user)
-
-    context = {
-        'interesse': interesse
-    }
-    return render(request, 'portal/interesse_success.html', context)
+    return render(request, 'portal/interesse_success.html', {})
