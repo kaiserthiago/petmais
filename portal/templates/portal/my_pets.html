@@ -36,7 +36,7 @@
                     <a href="{% url 'pet_show' pet.slug %}" class="btn btn-primary"
                        title="Visualizar"><span
                             class="fa fa-search"></span></a>
-                    <a href="{% url 'pet_question' pet.slug %}" class="btn btn-danger"
+                    <a href="{% url 'pet_question' pet.slug %}" class="btn btn-info"
                        title="Perguntas"><span
                             class="fa fa-question-circle"></span>
                         {% if pet.question_no_answer.count >= 1 %}
@@ -73,7 +73,7 @@
                     <a href="{% url 'pet_show' pet.slug %}" class="btn btn-primary"
                        title="Visualizar"><span
                             class="fa fa-search"></span></a>
-                    <a href="{% url 'pet_question' pet.slug %}" class="btn btn-danger"
+                    <a href="{% url 'pet_question' pet.slug %}" class="btn btn-info"
                        title="Perguntas"><span
                             class="fa fa-question-circle"></span>
                         {% if pet.question_no_answer.count >= 1 %}
