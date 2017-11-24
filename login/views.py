@@ -17,14 +17,14 @@ def register(request):
                 username=form.cleaned_data['username'].lower(),
                 password=form.cleaned_data['password'],
                 email=form.cleaned_data['email'],
-                firstname=form.cleaned_data['first_name'],
-                lastname=form.cleaned_data['last_name']
+                first_name=form.cleaned_data['first_name'],
+                last_name=form.cleaned_data['last_name']
             )
             new_user = authenticate(username=form.cleaned_data['username'],
                                     password=form.cleaned_data['password'],
                                     )
             login(request, new_user)
-            return redirect('home')
+            return redirect('login_register_success')
     else:
         form = RegistroForm()
 

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Eu quero! - Pet+{% endblock %}
+{% block class_quero %} class="active" {% endblock %}
+{% load static %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li>Eu quero</li>
+    </ul>
+    <h2 class="page-header">Eu quero!</h2>
+    <form action="{% url 'interesse_new' %}" method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            {{ form.as_p }}
+            <input type="submit" class="btn btn-success" value="Eu quero!">
+        </div>
+    </form>
+{% endblock %}

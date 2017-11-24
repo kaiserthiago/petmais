@@ -3,6 +3,10 @@
 {% load static %}
 
 {% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li>Espécies</li>
+    </ul>
     <h2 class="page-header">Espécies de animais</h2>
     <p><a href="{% url 'especie_new' %}">
         <span class="fa fa-plus-circle"></span>

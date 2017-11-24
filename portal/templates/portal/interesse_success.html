@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}Cadastro de interesse realizado - Pet+{% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li><a href="{% url 'interesse' %}">Registro de interesse</a></li>
+        <li><a href="{% url 'interesse_new' %}">Eu quero</a></li>
+        <li>Interesse registrado</li>
+    </ul>
+    <p class="alert alert-success">Interesse registrado com sucesso!</p>
+    <p><strong>{{ request.user.first_name }}</strong>, tão logo tiver o Pet de seu interesse entraremos em contato! Obrigado!</p>
+{% endblock %}

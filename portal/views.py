@@ -3,8 +3,8 @@ from django.contrib.auth.models import User
 from django.http import HttpResponseForbidden
 from django.shortcuts import render, redirect, get_object_or_404
 
-from portal.forms import PetForm, ContatoForm, EspecieForm, RacaForm, PetQuestionForm, AnswerQuestionForm
-from portal.models import Pet, Contato, Especie, Raca, PetQuestion, PetAnswer
+from portal.forms import PetForm, ContatoForm, EspecieForm, RacaForm, PetQuestionForm, AnswerQuestionForm, InteresseForm
+from portal.models import Pet, Contato, Especie, Raca, PetQuestion, PetAnswer, Interesse
 
 
 def home(request):
@@ -256,3 +256,48 @@ def pet_answer_question(request, slug, question_id):
     }
 
     return render(request, 'portal/pet_resposta_pergunta.html', context)
+
+
+@login_required
+def interesses(request):
+    interesses = Interesse.objects.filter(status='Solicitado')
+
+    context = {
+        'interesses': interesses
+    }
+
+    return render(request, 'portal/interesse.html', context)
+
+
+@login_required
+def interesse_new(request):
+    if request.method == 'POST':
+        form = InteresseForm(request.POST)
+
+        if form.is_valid():
+            interesse = Interesse()
+
+            interesse.user = request.user
+            interesse.especie = form.cleaned_data['especie']
+            interesse.raca = form.cleaned_data['raca']
+            interesse.idade = form.cleaned_data['idade']
+            interesse.genero = form.cleaned_data['genero']
+
+            interesse.save()
+
+            return redirect('interesse_sucesso')
+
+    form = InteresseForm()
+    context = {
+        'form': form,
+    }
+    return render(request, 'portal/interesse_new.html', context)
+
+
+def interesse_sucesso(request):
+    interesse = get_object_or_404(Interesse, user=request.user)
+
+    context = {
+        'interesse': interesse
+    }
+    return render(request, 'portal/interesse_success.html', context)

@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Meus Pets - Pet+{% endblock %}
+{% block class_pets %} class="active" {% endblock %}
+{% load static %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li>Interesse</li>
+    </ul>
+
+    <h2 class="page-header">Interessados em adotar</h2>
+    <table class="table table-striped">
+        <thead>
+        <th>#</th>
+        <th>Nome</th>
+        <th>Espécie</th>
+        <th>Raça</th>
+        <th>Gênero</th>
+        <th>Idade</th>
+        <th>Ações</th>
+        </thead>
+        <tbody>
+        {% for interesse in interesses %}
+            <tr>
+                <td style="vertical-align: middle">{{ interesse.id }}</td>
+                <td style="vertical-align: middle">{{ interesse.user.first_name }}</td>
+                <td style="vertical-align: middle">{{ interesse.especie }}</td>
+                <td style="vertical-align: middle">{{ interesse.raca }}</td>
+                <td style="vertical-align: middle">{{ interesse.genero }}</td>
+                <td style="vertical-align: middle">{{ interesse.idade }}</td>
+                <td style="vertical-align: middle">
+                    <a href="#" class="btn btn-success" title="Adotar"><span
+                            class="fa fa-check-square"></span></a>
+                    <a href="#" class="btn btn-primary" title="Notificar"><span
+                            class="fa fa-envelope"></span></a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="7" class="text-center alert-warning">
+                    Nenhum interesse cadastrado
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -5,8 +5,8 @@
 
 {% block content %}
     <ul class="breadcrumb">
-        <li><a href="{% url 'home' %}">Adote</a></li>
-        <li><a href="{% url 'pet_show' pet.slug %}">{{ pet.nome }}</a></li>
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li>{{ pet.nome }}</li>
     </ul>
     <div class="card">
         <div class="row">

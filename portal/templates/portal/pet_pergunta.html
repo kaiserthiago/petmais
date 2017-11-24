@@ -3,10 +3,9 @@
 
 {% block content %}
     <ul class="breadcrumb">
-        <li><a href="{% url 'home' %}">Home</a></li>
+        <li><a href="{% url 'home' %}">Início</a></li>
         <li><a href="{% url 'my_pets' %}">Meus Pets</a></li>
-        <li><a href="{% url 'pet_show' pet.slug %}">{{ pet.nome }}</a></li>
-        <li><a href="{% url 'pet_question' pet.slug %}">Perguntas</a></li>
+        <li>Perguntas - {{ pet.nome }}</li>
     </ul>
 
     <!--PERGUNTAS PENDENTES-->

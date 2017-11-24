@@ -65,7 +65,7 @@ class Pet(models.Model):
         ('Fêmea', 'Fêmea'),
         ('Macho', 'Macho'),
     )
-    genero = models.CharField(max_length=20, choices=GENERO_CHOICES, default="Feminino")
+    genero = models.CharField(max_length=20, choices=GENERO_CHOICES, default="Fêmea")
     descricao = models.TextField(blank=True, null=True)
     uf_escolhas = (
         ('AC', 'AC'),
@@ -198,3 +198,31 @@ class Contato(models.Model):
 
     def __str__(self):
         return self.nome
+
+
+class Interesse(models.Model):
+    user = models.ForeignKey(User)
+    especie = models.ForeignKey(Especie)
+    raca = models.ForeignKey(Raca, blank=True, null=True)
+    IDADE_CHOICES = (
+        ('1 a 3 meses', '1 a 3 meses'),
+        ('3 a 6 meses', '3 a 6 meses'),
+        ('6 a 9 meses', '6 a 9 meses'),
+        ('9 a 12 meses', '9 a 12 meses'),
+        ('1 a 3 anos', '1 a 3 anos'),
+        ('Acima de 3 anos', 'Acima de 3 anos'),
+    )
+    idade = models.CharField(max_length=20, choices=IDADE_CHOICES, default="1 a 3 meses")
+    GENERO_CHOICES = (
+        ('Fêmea', 'Fêmea'),
+        ('Macho', 'Macho'),
+    )
+    genero = models.CharField(max_length=20, choices=GENERO_CHOICES, default="Fêmea")
+    STATUS_CHOICES = (
+        ('Solicitado', 'Solicitado'),
+        ('Adotado', 'Adotado'),
+    )
+    status = models.CharField(max_length=20, choices=STATUS_CHOICES, default="Solicitado")
+
+    class Meta:
+        verbose_name_plural = 'Quero adotar'

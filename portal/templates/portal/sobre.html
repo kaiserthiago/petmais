@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}Sobre - Pet+{% endblock %}
-{% block class_sobre %} class="active" {% endblock %}
 
 {% block content %}
+     <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li>Sobre</li>
+    </ul>
     <h2 class="page-header">Pet+ Seu novo portal de doação de Pet’s.</h2>
     <p>
         Plataforma Social Web destinada ao relacionamento entre quem quer doar um animalzinho e quem quer receber,

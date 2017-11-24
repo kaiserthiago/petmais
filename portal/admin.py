@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.models import User
 
-from portal.models import UserProfile, Raca, Especie, Pet, Contato, PetAnswer, PetQuestion
+from portal.models import UserProfile, Raca, Especie, Pet, Contato, PetAnswer, PetQuestion, Interesse
 
 
 class UserProfileInline(admin.StackedInline):
@@ -44,6 +44,10 @@ class PetQuestionAdmin(admin.ModelAdmin):
     list_filter = ['pet', 'created_at']
     inlines = (PetAnswerInline,)
 
+class InteresseAdmin(admin.ModelAdmin):
+    list_display = ('id', 'especie', 'raca', 'genero', 'idade')
+    list_filter = ['especie', 'raca', 'genero', 'idade']
+
 
 admin.site.unregister(User)
 admin.site.register(User, UserAdmin)
@@ -52,3 +56,4 @@ admin.site.register(Especie, EspecieAdmin)
 admin.site.register(Pet, PetAdmin)
 admin.site.register(Contato, ContatoAdmin)
 admin.site.register(PetQuestion, PetQuestionAdmin)
+admin.site.register(Interesse, InteresseAdmin)

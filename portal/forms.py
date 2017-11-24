@@ -1,6 +1,6 @@
 from django import forms
 
-from portal.models import Raca, Especie, Pet, Contato, PetAnswer
+from portal.models import Raca, Especie, Pet, Contato, PetAnswer, Interesse
 
 
 class PetQuestionForm(forms.Form):
@@ -108,4 +108,24 @@ class ContatoForm(forms.ModelForm):
             'nome': 'Nome',
             'email': 'E-mail',
             'comentario': 'Comentário'
+        }
+
+
+class InteresseForm(forms.ModelForm):
+    class Meta:
+        model = Interesse
+        exclude = ('user', 'status')
+
+        widgets = {
+            'especie': forms.Select(attrs={'class': 'form-control', 'autofocus': 'autofocus'}),
+            'raca': forms.Select(attrs={'class': 'form-control'}),
+            'genero': forms.Select(attrs={'class': 'form-control'}),
+            'idade': forms.Select(attrs={'class': 'form-control'}),
+        }
+
+        labels = {
+            'especie': 'Espécie',
+            'raca': 'Raça',
+            'genero': 'Gênero',
+            'idade': 'Idade'
         }

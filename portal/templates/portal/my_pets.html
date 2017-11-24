@@ -5,8 +5,8 @@
 
 {% block content %}
     <ul class="breadcrumb">
-        <li><a href="{% url 'home' %}">Home</a></li>
-        <li><a href="{% url 'my_pets' %}">Meus Pets</a></li>
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li>Meus Pets</li>
     </ul>
 
     <h2 class="page-header">Meus pets</h2>
@@ -41,7 +41,7 @@
                             class="fa fa-search"></span></a>
                     <a href="{% url 'pet_question' pet.slug %}" class="btn btn-danger"
                        title="Perguntas"><span
-                            class="fa fa-question-circle-o"></span>
+                            class="fa fa-question-circle"></span>
                         {% if pet.question_no_answer.count >= 1 %}
                             ({{ pet.question_no_answer.count }})
                         {% endif %}
