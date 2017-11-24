@@ -12,6 +12,8 @@ urlpatterns = [
     url(r'^interesse/new$', views.interesse_new, name='interesse_new'),
     url(r'^interesse$', views.interesses, name='interesse'),
 
+    url(r'^dashboard$', views.dashboard, name='dashboard'),
+
     url(r'^conta$', views.minha_conta, name='minha_conta'),
 
     url(r'^my_pets$', views.my_pets, name='my_pets'),

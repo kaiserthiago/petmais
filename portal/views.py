@@ -1,3 +1,4 @@
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
@@ -43,12 +44,34 @@ def contato(request):
 def sobre(request):
     return render(request, 'portal/sobre.html', {})
 
+
+@login_required
 def minha_conta(request):
     usuario = get_object_or_404(User, pk=request.user.id)
     context = {
         'usuario': usuario
     }
     return render(request, 'portal/my_account.html', context)
+
+
+@staff_member_required
+def dashboard(request):
+    usuario = get_object_or_404(User, pk=request.user.id)
+    context = {
+        'usuario': usuario
+    }
+    return render(request, 'portal/dashboard.html', context)
+
+
+@staff_member_required
+def especies(request):
+    especies = Especie.objects.all().order_by('descricao')
+
+    context = {
+        'especies': especies
+    }
+
+    return render(request, 'portal/especies.html', context)
 
 
 @login_required
@@ -73,7 +96,7 @@ def especie_new(request):
     return render(request, 'portal/especie_new.html', context)
 
 
-@login_required
+@staff_member_required
 def racas(request):
     racas = Raca.objects.all().order_by('descricao')
 
@@ -84,7 +107,7 @@ def racas(request):
     return render(request, 'portal/racas.html', context)
 
 
-@login_required
+@staff_member_required
 def raca_new(request):
     if request.method == 'POST':
         form = RacaForm(request.POST)
@@ -105,17 +128,6 @@ def raca_new(request):
     }
 
     return render(request, 'portal/raca_new.html', context)
-
-
-@login_required
-def especies(request):
-    especies = Especie.objects.all().order_by('descricao')
-
-    context = {
-        'especies': especies
-    }
-
-    return render(request, 'portal/especies.html', context)
 
 
 @login_required
