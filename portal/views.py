@@ -86,7 +86,7 @@ def especie_new(request):
 
             especie.save()
 
-            return redirect('my_especies')
+            return redirect('especies')
 
     form = EspecieForm()
     context = {
@@ -236,23 +236,23 @@ def pet_new(request):
 
             pet.save()
 
-            lista = Interesse.objects.filter(status='Solicitado')
-
-            for item in lista:
-                if (pet.especie == item.especie) and (pet.raca == item.raca):
-                    link = '127.0.0.1:8000/pet/show/'
-                    subject, from_email, to = 'Pet disponível - Pet+', 'thiagokaisi@gmail.com', item.user.email
-                    text_content = 'Olá, ' + item.user.first_name + '. É com grande satisfação que informamos que temos um pet disponível para adoção.'
-                    html_content = '<p>Olá, ' + item.user.first_name + '.</p>' \
-                                                                       'Temos uma ótima notícia, temos um Pet exatamente como você queria!<br>' \
-                                                                       '<a href="' + link + pet.slug + '"> Oi, me chamo ' + pet.nome + '</a>, leve-me para casa com você!<br><br>' \
-                                                                                                                                       '<p>Atenciosamente,</p>' \
-                                                                                                                                       '<strong>Pet+</strong><br>' \
-                                                                                                                                       '<em>Seu portal de adoção de Pets.</em><br><br>' \
-                                                                                                                                       '<p style="color: red"><strong>Essa é uma mensagem automática, não é necessário respondê-la.</strong></p>'
-                    msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-                    msg.attach_alternative(html_content, "text/html")
-                    msg.send()
+            # lista = Interesse.objects.filter(status='Solicitado')
+            #
+            # for item in lista:
+            #     if (pet.especie == item.especie) and (pet.raca == item.raca):
+            #         link = '127.0.0.1:8000/pet/show/'
+            #         subject, from_email, to = 'Pet disponível - Pet+', 'thiagokaisi@gmail.com', item.user.email
+            #         text_content = 'Olá, ' + item.user.first_name + '. É com grande satisfação que informamos que temos um pet disponível para adoção.'
+            #         html_content = '<p>Olá, ' + item.user.first_name + '.</p>' \
+            #                                                            'Temos uma ótima notícia, temos um Pet exatamente como você queria!<br>' \
+            #                                                            '<a href="' + link + pet.slug + '"> Oi, me chamo ' + pet.nome + '</a>, leve-me para casa com você!<br><br>' \
+            #                                                                                                                            '<p>Atenciosamente,</p>' \
+            #                                                                                                                            '<strong>Pet+</strong><br>' \
+            #                                                                                                                            '<em>Seu portal de adoção de Pets.</em><br><br>' \
+            #                                                                                                                            '<p style="color: red"><strong>Essa é uma mensagem automática, não é necessário respondê-la.</strong></p>'
+            #         msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            #         msg.attach_alternative(html_content, "text/html")
+            #         msg.send()
 
             return redirect('my_pets')
 
@@ -383,18 +383,18 @@ def interesse_new(request):
 
             interesse.save()
 
-            subject, from_email, to = 'Cadastro de interesse - Pet+', 'thiagokaisi@gmail.com', request.user.email
-            text_content = 'Olá, ' + request.user.first_name + '. Obrigado pelo seu interesse em adotar um Pet! Entraremos em contato quando encontrarmos seu novo Pet. Atenciosamente, Pet+ Seu portal de adoção de Pets.'
-            html_content = '<p>Olá, ' + request.user.first_name + '.</p>' \
-                                                                  'Obrigado pelo seu interesse em adotar um Pet!<br>' \
-                                                                  'Entraremos em contato quando encontrarmos seu novo Pet.<br><br>' \
-                                                                  '<p>Atenciosamente,</p>' \
-                                                                  '<strong>Pet+</strong><br>' \
-                                                                  '<em>Seu portal de adoção de Pets.</em><br><br>' \
-                                                                  '<p style="color: red"><strong>Essa é uma mensagem automática, não é necessário respondê-la.</strong></p>'
-            msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
-            msg.attach_alternative(html_content, "text/html")
-            msg.send()
+            # subject, from_email, to = 'Cadastro de interesse - Pet+', 'thiagokaisi@gmail.com', request.user.email
+            # text_content = 'Olá, ' + request.user.first_name + '. Obrigado pelo seu interesse em adotar um Pet! Entraremos em contato quando encontrarmos seu novo Pet. Atenciosamente, Pet+ Seu portal de adoção de Pets.'
+            # html_content = '<p>Olá, ' + request.user.first_name + '.</p>' \
+            #                                                       'Obrigado pelo seu interesse em adotar um Pet!<br>' \
+            #                                                       'Entraremos em contato quando encontrarmos seu novo Pet.<br><br>' \
+            #                                                       '<p>Atenciosamente,</p>' \
+            #                                                       '<strong>Pet+</strong><br>' \
+            #                                                       '<em>Seu portal de adoção de Pets.</em><br><br>' \
+            #                                                       '<p style="color: red"><strong>Essa é uma mensagem automática, não é necessário respondê-la.</strong></p>'
+            # msg = EmailMultiAlternatives(subject, text_content, from_email, [to])
+            # msg.attach_alternative(html_content, "text/html")
+            # msg.send()
 
             return redirect('interesse_sucesso')
 
