@@ -22,11 +22,13 @@
                 Raças</a>
         </div>
         <div class="col-sm-3">
-            <a data-toggle="modal" href="#modal-logout" class="btn btn-danger btn-block">
-                <i class="fa fa-power-off"></i> Sair</a>
+            <a href="{% url 'interesses' %}" class="btn btn-primary btn-block">
+                <span class="fa fa-user-circle"></span>
+                Interessados</a>
         </div>
         <div class="col-sm-3">
-
+            <a data-toggle="modal" href="#modal-logout" class="btn btn-danger btn-block">
+                <i class="fa fa-power-off"></i> Sair</a>
         </div>
     </div>
 {% endblock %}

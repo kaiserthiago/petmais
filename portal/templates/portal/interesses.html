@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block title %}Meus Pets - Pet+{% endblock %}
+{% block class_pets %} class="active" {% endblock %}
+{% load static %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        <li>Interesses em adotar</li>
+    </ul>
+
+    <h2 class="page-header">Intereses em adotar</h2>
+    <table class="table table-striped">
+        <thead>
+        <th>Usuário</th>
+        <th>Espécie</th>
+        <th>Raça</th>
+        <th>Gênero</th>
+        <th>Idade</th>
+        <th>Ações</th>
+        </thead>
+        <tbody>
+        {% for interesse in interesses_solicitados %}
+            <tr>
+                <td style="vertical-align: middle">{{ interesse.user.first_name }}</td>
+                <td style="vertical-align: middle">{{ interesse.especie }}</td>
+                <td style="vertical-align: middle">{{ interesse.raca }}</td>
+                <td style="vertical-align: middle">{{ interesse.genero }}</td>
+                <td style="vertical-align: middle">{{ interesse.idade }}</td>
+                <td style="vertical-align: middle">
+                    <a href="{% url 'interesse_adocao' interesse.id %}" class="btn btn-success" title="Adotar"><span
+                            class="fa fa-check-square"></span></a>
+                </td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="5" class="text-center alert-warning">
+                    Nenhum interesse cadastrado
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2 class="page-header">Intereses adotados</h2>
+    <table class="table table-striped">
+        <thead>
+        <th>Usuário</th>
+        <th>Espécie</th>
+        <th>Raça</th>
+        <th>Gênero</th>
+        <th>Idade</th>
+        </thead>
+        <tbody>
+        {% for interesse in interesses_adotados %}
+            <tr>
+                <td style="vertical-align: middle">{{ interesse.user.first_name }}</td>
+                <td style="vertical-align: middle">{{ interesse.especie }}</td>
+                <td style="vertical-align: middle">{{ interesse.raca }}</td>
+                <td style="vertical-align: middle">{{ interesse.genero }}</td>
+                <td style="vertical-align: middle">{{ interesse.idade }}</td>
+            </tr>
+        {% empty %}
+            <tr>
+                <td colspan="4" class="text-center alert-warning">
+                    Nenhum interesse adotado
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

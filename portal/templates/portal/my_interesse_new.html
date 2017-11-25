@@ -10,7 +10,7 @@
         <li>Eu quero</li>
     </ul>
     <h2 class="page-header">Eu quero!</h2>
-    <form action="{% url 'interesse_new' %}" method="POST">
+    <form action="{% url 'my_interesse_new' %}" method="POST">
         {% csrf_token %}
         <div class="form-group">
             {{ form.as_p }}

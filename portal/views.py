@@ -377,7 +377,7 @@ def pet_answer_question(request, slug, question_id):
 
 
 @login_required
-def interesses(request):
+def my_interesses(request):
     interesses_solicitados = Interesse.objects.filter(status='Solicitado', user=request.user.id)
     interesses_adotados = Interesse.objects.filter(status='Adotado', user=request.user.id)
 
@@ -386,11 +386,24 @@ def interesses(request):
         'interesses_adotados': interesses_adotados
     }
 
-    return render(request, 'portal/interesse.html', context)
+    return render(request, 'portal/my_interesse.html', context)
+
+
+@staff_member_required
+def interesses(request):
+    interesses_solicitados = Interesse.objects.filter(status='Solicitado')
+    interesses_adotados = Interesse.objects.filter(status='Adotado')
+
+    context = {
+        'interesses_solicitados': interesses_solicitados,
+        'interesses_adotados': interesses_adotados
+    }
+
+    return render(request, 'portal/interesses.html', context)
 
 
 @login_required
-def interesse_new(request):
+def my_interesse_new(request):
     if request.method == 'POST':
         form = InteresseForm(request.POST)
 
@@ -418,18 +431,18 @@ def interesse_new(request):
             # msg.attach_alternative(html_content, "text/html")
             # msg.send()
 
-            return redirect('interesse_sucesso')
+            return redirect('my_interesse_sucesso')
 
     form = InteresseForm()
     context = {
         'form': form,
     }
-    return render(request, 'portal/interesse_new.html', context)
+    return render(request, 'portal/my_interesse_new.html', context)
 
 
 @login_required
-def interesse_sucesso(request):
-    return render(request, 'portal/interesse_success.html', {})
+def my_interesse_sucesso(request):
+    return render(request, 'portal/my_interesse_success.html', {})
 
 
 @login_required

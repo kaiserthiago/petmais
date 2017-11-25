@@ -8,9 +8,11 @@ urlpatterns = [
     url(r'^contato$', views.contato, name='contato'),
 
     url(r'^interesse/(?P<interesse_id>\d+)/adocao$', views.interesse_adocao, name='interesse_adocao'),
-    url(r'^interesse/sucesso$', views.interesse_sucesso, name='interesse_sucesso'),
-    url(r'^interesse/new$', views.interesse_new, name='interesse_new'),
-    url(r'^interesse$', views.interesses, name='interesse'),
+    url(r'^my_interesse/sucesso$', views.my_interesse_sucesso, name='my_interesse_sucesso'),
+    url(r'^my_interesse/new$', views.my_interesse_new, name='my_interesse_new'),
+    url(r'^my_interesse$', views.my_interesses, name='my_interesse'),
+
+    url(r'^interesses$', views.interesses, name='interesses'),
 
     url(r'^dashboard$', views.dashboard, name='dashboard'),
 
