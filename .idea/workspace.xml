@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="073bd1ba-1d02-4e43-8d90-ea42f70b49e5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/portal/interesses.html" afterPath="$PROJECT_DIR$/portal/templates/portal/interesses.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/portal/templates/base.html" afterPath="$PROJECT_DIR$/portal/templates/base.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -64,7 +65,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="interesses.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="interesses.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/portal/templates/portal/interesses.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
@@ -137,11 +138,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="base.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/portal/templates/base.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="292">
-              <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
+            <state relative-caret-position="475">
+              <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -238,10 +239,10 @@
         <option value="$PROJECT_DIR$/portal/templates/portal/my_interesse_new.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/my_interesse_success.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/my_account.html" />
-        <option value="$PROJECT_DIR$/portal/templates/base.html" />
         <option value="$PROJECT_DIR$/portal/views.py" />
         <option value="$PROJECT_DIR$/portal/templates/portal/dashboard.html" />
         <option value="$PROJECT_DIR$/portal/templates/portal/interesses.html" />
+        <option value="$PROJECT_DIR$/portal/templates/base.html" />
       </list>
     </option>
   </component>
@@ -809,14 +810,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/portal/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="292">
-          <caret line="25" column="62" lean-forward="false" selection-start-line="25" selection-start-column="62" selection-end-line="25" selection-end-column="62" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/portal/templates/portal/my_interesse_new.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -877,6 +870,14 @@
             <element signature="e#826#856#0#HTML" expanded="true" />
             <element signature="e#2076#2106#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/portal/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="28" column="36" lean-forward="false" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>

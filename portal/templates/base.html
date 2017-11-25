@@ -26,7 +26,7 @@
     <a {% block class_quero %}{% endblock %} href="{% url 'my_interesse_new' %}"><i class="fa fa-paw"></i> Eu quero!</a>
 </div>
 
-<div id="mySidenav" class="sidenav">
+<div id="mySidenav" class="sidenav" onmouseleave="closeNav()">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
     <a href="{% url 'home' %}"><i class="fa fa-home"></i> Início</a>
     <a href="{% url 'contato' %}"><i class="fa fa-envelope"></i> Contato</a>
