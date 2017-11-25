@@ -29,7 +29,7 @@
                 <td style="vertical-align: middle">
                     <a href="{% url 'raca_edit' raca.slug %}" class="btn btn-warning" title="Editar"><span
                             class="fa fa-edit"></span></a>
-                    <a href="#" class="btn btn-danger" title="Excluir"><span class="fa fa-close"></span></a>
+                    <a href="{% url 'raca_delete' raca.slug %}" class="btn btn-danger" title="Excluir"><span class="fa fa-close"></span></a>
 
                 </td>
             </tr>

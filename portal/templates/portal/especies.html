@@ -27,7 +27,7 @@
                 <td style="vertical-align: middle">
                     <a href="{% url 'especie_edit' especie.slug %}" class="btn btn-warning" title="Editar"><span
                             class="fa fa-edit"></span></a>
-                    <a href="#" class="btn btn-danger" title="Excluir"><span class="fa fa-close"></span></a>
+                    <a href="{% url 'especie_delete' especie.slug %}" class="btn btn-danger" title="Excluir"><span class="fa fa-close"></span></a>
                 </td>
             </tr>
         {% empty %}

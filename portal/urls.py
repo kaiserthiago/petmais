@@ -28,9 +28,11 @@ urlpatterns = [
 
     url(r'^especies$', views.especies, name='especies'),
     url(r'^especie/edit/(?P<slug>[-\w\d]+)$', views.especie_edit, name='especie_edit'),
+    url(r'^especie/delete/(?P<slug>[-\w\d]+)$', views.especie_delete, name='especie_delete'),
     url(r'^especie/new$', views.especie_new, name='especie_new'),
 
     url(r'^racas$', views.racas, name='racas'),
-    url(r'^raca_edit/(?P<slug>[-\w\d]+)$', views.raca_edit, name='raca_edit'),
+    url(r'^raca/edit/(?P<slug>[-\w\d]+)$', views.raca_edit, name='raca_edit'),
+    url(r'^raca/delete/(?P<slug>[-\w\d]+)$', views.raca_delete, name='raca_delete'),
     url(r'^raca/new$', views.raca_new, name='raca_new'),
 ]

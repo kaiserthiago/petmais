@@ -119,6 +119,16 @@ def especie_edit(request, slug):
 
 
 @staff_member_required
+def especie_delete(request, slug):
+    especie = get_object_or_404(Especie, slug=slug)
+
+    especie.delete()
+
+    return redirect('especies')
+
+
+
+@staff_member_required
 def racas(request):
     racas = Raca.objects.all().order_by('descricao')
 
@@ -174,6 +184,14 @@ def raca_edit(request, slug):
 
     return render(request, 'portal/raca_edit.html', context)
 
+
+@staff_member_required
+def raca_delete(request, slug):
+    raca = get_object_or_404(Raca, slug=slug)
+
+    raca.delete()
+
+    return redirect('racas')
 
 @login_required
 def my_pets(request):
