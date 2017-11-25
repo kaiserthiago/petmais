@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Excluindo raça - Pet+{% endblock %}
+
+{% block content %}
+    <ul class="breadcrumb">
+        <li><a href="{% url 'home' %}">Início</a></li>
+        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        <li><a href="{% url 'racas' %}">Raças</a></li>
+        <li>Excluindo: {{ raca.descricao }}</li>
+    </ul>
+    <h3 class="page-header">Excluindo: {{ raca.descricao }}</h3>
+    <form action="" method="post">
+        {% csrf_token %}
+        <p>Tem certeza que deseja excluir a raça <strong>{{ raca.descricao }}</strong>?</p>
+        <button type="submit" class="btn btn-danger">Excluir</button>
+        <button type="reset" onclick="javascript:window.history.go(-1)" class="btn btn-default">Cancelar</button>
+    </form>
+{% endblock %}

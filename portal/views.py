@@ -122,15 +122,16 @@ def especie_edit(request, slug):
 def especie_delete(request, slug):
     especie = get_object_or_404(Especie, slug=slug)
 
-    especie.delete()
+    if request.method == 'POST':
+        especie.delete()
+        return redirect('especies')
 
-    return redirect('especies')
-
+    return render(request, 'portal/especie_delete.html', {'especie': especie})
 
 
 @staff_member_required
 def racas(request):
-    racas = Raca.objects.all().order_by('descricao')
+    racas = Raca.objects.all().order_by('descricao').order_by('descricao')
 
     context = {
         'racas': racas,
@@ -189,9 +190,12 @@ def raca_edit(request, slug):
 def raca_delete(request, slug):
     raca = get_object_or_404(Raca, slug=slug)
 
-    raca.delete()
+    if request.method == 'POST':
+        raca.delete()
+        return redirect('racas')
 
-    return redirect('racas')
+    return render(request, 'portal/raca_delete.html', {'raca': raca})
+
 
 @login_required
 def my_pets(request):
