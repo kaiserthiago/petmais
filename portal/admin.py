@@ -44,6 +44,7 @@ class PetQuestionAdmin(admin.ModelAdmin):
     list_filter = ['pet', 'created_at']
     inlines = (PetAnswerInline,)
 
+
 class InteresseAdmin(admin.ModelAdmin):
     list_display = ('id', 'especie', 'raca', 'genero', 'idade', 'status')
     list_filter = ['especie', 'raca', 'genero', 'idade', 'status']
